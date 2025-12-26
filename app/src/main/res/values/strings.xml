@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Alarmetrics</string>
+    <string name="app_name_launcher">Alarmetrics</string>
+    <string name="app_version">1.0.0</string>
+
+    <string name="onboarding_info_1">Alarmetrics runs a low-impact background service that listens to device notifications and tracks how many times you\'ve snoozed alarms, reminders, &amp; calendar events.\n\nNo data is sent off-device; Alarmetrics doesn\'t have access to the internet.</string>
+    <string name="grant_permission">Grant permission</string>
+    <string name="onboarding_info_2">On some devices, the \'battery optimization\' feature leads to delayed notification capture, so the recorded time of snoozing may be wrong.</string>
+    <string name="disable_optimization">Disable optimization</string>
+    <string name="skip">Skip</string>
+
+    <string name="no_alarms">No alarms detected yet.\nCheck again after a few snoozes.</string>
+    <string name="snooze">snooze</string>
+    <string name="range">Range:</string>
+    <string name="this_week">This Week</string>
+    <string name="this_month">This Month</string>
+    <string name="this_year">This Year</string>
+    <string name="this_decade">This Decade</string>
+    <string name="dialog_title">%1$s alarm</string>
+    <string name="archive_confirmation">Archive alarm? This will clear all existing records for this alarm and disable tracking.</string>
+    <string name="unarchive_confirmation">Enable tracking for this alarm?</string>
+    <string name="delete_confirmation">Deletion will clear all existing records for this alarm. If detected in the future, this alarm will be added back and tracked once again. If you instead wish Alarmetrics to remember to not track this alarm, archive it instead.</string>
+    <string name="archive">Archive</string>
+    <string name="unarchive">Unarchive</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="archive_empty">No alarms archived yet.</string>
+
+    <string name="about">About</string>
+    <string name="app_description">" listens to device notifications and tracks snoozed alarms, reminders, and calendar events."</string>
+    <string name="app_links"><![CDATA[Licensed under <a href=\"https://github.com/BURG3R5/Alarmetrics/blob/master/LICENSE\">GPLv3</a><br/>Source code available on <a href=\"https://github.com/BURG3R5/Alarmetrics\">GitHub</a>]]></string>
+    <string name="app_permissions"><![CDATA[Permissions used: <ul><li>BIND_NOTIFICATION_LISTENER_SERVICE - to listen to notifications</li><li>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS (optional) - to prevent app from being killed in the background</li></ul>]]></string>
+    <string name="dev_credit"><![CDATA[Developed by <a href=\"https://github.com/BURG3R5/\">BURG3R5</a>]]></string>
+
+    <string name="alttext_app_logo">App logo</string>
+    <string name="alttext_back_button">Back button</string>
+    <string name="alttext_toggle_button">%1$s alarm</string>
+</resources>
