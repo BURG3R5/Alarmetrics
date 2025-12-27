@@ -16,7 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import co.adityarajput.alarmetrics.R
 import co.adityarajput.alarmetrics.enums.AlarmApp
-import co.adityarajput.alarmetrics.utils.getLast
+import co.adityarajput.alarmetrics.utils.clipTo
 import co.adityarajput.alarmetrics.utils.withUnit
 import co.adityarajput.alarmetrics.views.Theme
 
@@ -86,7 +86,7 @@ fun Tile(
 private fun AlarmTile() = Theme {
     Tile(
         "Exercise",
-        AlarmApp.GOOGLE_CLOCK.`package`.getLast(30),
+        AlarmApp.GOOGLE_CLOCK.displayName.clipTo(30),
         69.withUnit(stringResource(R.string.snooze)),
         { },
         true,
@@ -98,4 +98,4 @@ private fun AlarmTile() = Theme {
 @Preview
 @Composable
 private fun ArchivedAlarmTile() =
-    Theme { Tile("Wake up", AlarmApp.GOOGLE_CLOCK.`package`.getLast(30)) }
+    Theme { Tile("Wake up", AlarmApp.GOOGLE_CLOCK.displayName.clipTo(30)) }

@@ -15,7 +15,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.lifecycle.viewmodel.compose.viewModel
 import co.adityarajput.alarmetrics.R
 import co.adityarajput.alarmetrics.enums.DialogState
-import co.adityarajput.alarmetrics.utils.getLast
+import co.adityarajput.alarmetrics.utils.clipTo
 import co.adityarajput.alarmetrics.utils.withUnit
 import co.adityarajput.alarmetrics.viewmodels.AlarmsViewModel
 import co.adityarajput.alarmetrics.viewmodels.Provider
@@ -78,7 +78,7 @@ fun AlarmsScreen(
                 ) {
                     Tile(
                         it.alarm.title,
-                        it.alarm.app.`package`.getLast(30),
+                        it.alarm.app.displayName.clipTo(30),
                         it.count.withUnit(stringResource(R.string.snooze)),
                         { viewModel.selectedAlarm = if (it.alarm != viewModel.selectedAlarm) it.alarm else null },
                         viewModel.selectedAlarm == it.alarm,
