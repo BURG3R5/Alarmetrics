@@ -6,6 +6,8 @@
 
 Alarmetrics listens to device notifications and tracks snoozed alarms, reminders, and calendar events.
 
+[<img src="https://github.com/user-attachments/assets/713d71c5-3dec-4ec4-a3f2-8d28d025a9c6" alt="Get it on Obtainium" height="80">](https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/BURG3R5/Alarmetrics)
+
 ## Screenshots
 
 <img alt="Alarmetrics screenshot: alarms screen" src="https://github.com/BURG3R5/Alarmetrics/blob/dev/metadata/en-US/images/phoneScreenshots/1.png" width=30%> <img alt="Alarmetrics screenshot: archive screen" src="https://github.com/BURG3R5/Alarmetrics/blob/dev/metadata/en-US/images/phoneScreenshots/2.png" width=30%>
