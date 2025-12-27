@@ -1,0 +1,2 @@
+• feat: Display non-latest ranges
+• patch: Display app names instead of packages
