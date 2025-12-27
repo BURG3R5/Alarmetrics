@@ -12,10 +12,11 @@
     <string name="no_alarms">No alarms detected yet.\nCheck again after a few snoozes.</string>
     <string name="snooze">snooze</string>
     <string name="range">Range:</string>
-    <string name="this_week">This Week</string>
-    <string name="this_month">This Month</string>
-    <string name="this_year">This Year</string>
-    <string name="this_decade">This Decade</string>
+    <string name="week">Week</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="decade">Decade</string>
+    <string name="start_date">Start date:</string>
     <string name="dialog_title">%1$s alarm</string>
     <string name="archive_confirmation">Archive alarm? This will clear all existing records for this alarm and disable tracking.</string>
     <string name="unarchive_confirmation">Enable tracking for this alarm?</string>
