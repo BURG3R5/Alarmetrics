@@ -19,7 +19,7 @@ fun Long.minus(offset: Int, range: Range): Long {
         Range.WEEK -> this.toDate().minusWeeks(offset.toLong()).plusDays(1)
         Range.MONTH -> this.toDate().minusMonths(offset.toLong()).plusDays(1)
         Range.YEAR -> this.toDate().minusYears(offset.toLong()).plusDays(1)
-        else -> this.toDate()
+        else -> this.toDate().minusYears(offset * 10L).plusDays(1)
     }
 
     return offsetDate.millisAtStartOfDay() + (this % (24 * 60 * 60 * 1000))

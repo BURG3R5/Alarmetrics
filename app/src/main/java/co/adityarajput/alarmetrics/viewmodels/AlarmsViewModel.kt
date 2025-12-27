@@ -13,9 +13,7 @@ import co.adityarajput.alarmetrics.data.record.RecordsRepository
 import co.adityarajput.alarmetrics.enums.DialogState
 import co.adityarajput.alarmetrics.enums.Range
 import co.adityarajput.alarmetrics.utils.getEndOfRange
-import co.adityarajput.alarmetrics.utils.getStartOfRange
 import co.adityarajput.alarmetrics.utils.indexIn
-import co.adityarajput.alarmetrics.utils.minus
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
@@ -37,16 +35,10 @@ class AlarmsViewModel(
 
     var selectedAlarm by mutableStateOf<Alarm?>(null)
 
-    fun getChartData(
-        alarm: Alarm,
-        range: Range,
-        offset: Int,
-    ): StateFlow<ChartState> {
+    fun getChartData(alarm: Alarm, range: Range, from: Long): StateFlow<ChartState> {
         val flow = MutableStateFlow(ChartState())
 
-        val nowWithOffset = System.currentTimeMillis().minus(offset, range)
-        val from = nowWithOffset.getStartOfRange(range)
-        val to = nowWithOffset.getEndOfRange(range)
+        val to = from.getEndOfRange(range)
 
         viewModelScope.launch {
             recordsRepository.list(alarm.id, from, to).collect { records ->
