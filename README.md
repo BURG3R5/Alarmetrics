@@ -26,8 +26,12 @@ Alarmetrics listens to device notifications and tracks snoozed alarms, reminders
 
 - Google Calendar
 - Google Clock
-- Samsung Calendar
+- Samsung Calendar*
 - Samsung Clock
 - Samsung Reminder
 
 If your preferred alarm app isn't on this list, just [create an issue](https://github.com/BURG3R5/Alarmetrics/issues/new).
+
+### Known Issues
+
+- Samsung Calendar often sends 2-4 notifications for the same snooze, which leads to inaccurate snooze counts. I'm working on fixing this. For now, the _relative_ trends are still somewhat accurate.
