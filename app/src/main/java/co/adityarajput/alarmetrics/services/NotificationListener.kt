@@ -17,8 +17,7 @@ import kotlinx.coroutines.launch
 class NotificationListener : NotificationListenerService() {
     private val serviceJob = SupervisorJob()
     private val serviceScope = CoroutineScope(Dispatchers.Default + serviceJob)
-    private val alarmsRepository by lazy { AppContainer(this).alarmsRepository }
-    private val recordsRepository by lazy { AppContainer(this).recordsRepository }
+    private val repository by lazy { AppContainer(this).repository }
 
     @Volatile
     private var alarms: List<Alarm> = emptyList()
@@ -28,7 +27,7 @@ class NotificationListener : NotificationListenerService() {
         Log.d("NotificationListener", "Service created")
 
         serviceScope.launch {
-            alarmsRepository.list().collectLatest { newAlarms ->
+            repository.alarms().collectLatest { newAlarms ->
                 alarms = newAlarms
                 Log.d("NotificationListener", "Alarms updated: $alarms")
             }
@@ -60,17 +59,17 @@ class NotificationListener : NotificationListenerService() {
                 }
             } else {
                 alarm = Alarm(title, app)
-                alarmId = alarmsRepository.save(alarm)
+                alarmId = repository.create(alarm)
                 Log.d("NotificationListener", "Created $alarm")
             }
 
-            var record = recordsRepository.getLatest(alarmId)
+            var record = repository.getLatestRecord(alarmId)
             if (record != null && record.firstSnooze.happenedToday()) {
-                recordsRepository.registerSnooze(record.id)
+                repository.registerSnooze(record.id)
                 Log.d("NotificationListener", "Updated $record")
             } else {
                 record = Record(alarmId)
-                recordsRepository.create(record)
+                repository.create(record)
                 Log.d("NotificationListener", "Created $record")
             }
         }

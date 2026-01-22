@@ -1,4 +1,4 @@
-package co.adityarajput.alarmetrics.views.screens.permissions
+package co.adityarajput.alarmetrics.views.screens
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -37,7 +37,7 @@ import androidx.core.net.toUri
 
 @SuppressLint("BatteryLife")
 @Composable
-fun PermissionScreen(goToFiltersScreen: () -> Unit = {}) {
+fun OnboardingScreen(goToFiltersScreen: () -> Unit = {}) {
     val context = LocalContext.current
     var hasRequiredPermission by remember { mutableStateOf(false) }
 
@@ -101,4 +101,4 @@ fun PermissionScreen(goToFiltersScreen: () -> Unit = {}) {
 
 @Preview
 @Composable
-private fun PermissionScreenPreview() = Theme { PermissionScreen() }
+private fun OnboardingScreenPreview() = Theme { OnboardingScreen() }

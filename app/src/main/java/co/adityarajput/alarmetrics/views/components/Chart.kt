@@ -1,4 +1,4 @@
-package co.adityarajput.alarmetrics.views.screens.alarms
+package co.adityarajput.alarmetrics.views.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn

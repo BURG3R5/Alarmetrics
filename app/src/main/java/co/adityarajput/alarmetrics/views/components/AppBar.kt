@@ -3,12 +3,11 @@ package co.adityarajput.alarmetrics.views.components
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import co.adityarajput.alarmetrics.R
 import co.adityarajput.alarmetrics.views.Theme
-import co.adityarajput.alarmetrics.views.icons.ArrowBack
-import co.adityarajput.alarmetrics.views.icons.Snooze
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -24,9 +23,9 @@ fun AppBar(
                 title,
                 style = MaterialTheme.typography.headlineMedium.copy(
                     fontSize = when {
-                        canNavigateBack -> MaterialTheme.typography.headlineSmall.fontSize
+                        canNavigateBack -> MaterialTheme.typography.headlineMedium.fontSize
                         else -> MaterialTheme.typography.headlineLarge.fontSize
-                    }
+                    },
                 ),
             )
         },
@@ -37,13 +36,13 @@ fun AppBar(
             IconButton(leadingIconOnClick) {
                 if (canNavigateBack) {
                     Icon(
-                        ArrowBack,
-                        stringResource(R.string.alttext_back_button)
+                        painterResource(R.drawable.arrow_back),
+                        stringResource(R.string.alttext_back_button),
                     )
                 } else {
                     Icon(
-                        Snooze,
-                        stringResource(R.string.alttext_app_logo)
+                        painterResource(R.drawable.snooze),
+                        stringResource(R.string.alttext_app_logo),
                     )
                 }
             }
