@@ -37,4 +37,9 @@
     <string name="alttext_app_logo">App logo</string>
     <string name="alttext_back_button">Back button</string>
     <string name="alttext_toggle_button">%1$s alarm</string>
+
+    <plurals name="snooze">
+        <item quantity="one">%1$d snooze</item>
+        <item quantity="other">%1$d snoozes</item>
+    </plurals>
 </resources>
