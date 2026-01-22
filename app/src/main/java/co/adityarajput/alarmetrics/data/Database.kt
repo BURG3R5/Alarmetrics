@@ -19,12 +19,12 @@ abstract class AlarmetricsDatabase : RoomDatabase() {
 
     companion object {
         @Volatile
-        private var Instance: AlarmetricsDatabase? = null
+        private var instance: AlarmetricsDatabase? = null
 
         fun getDatabase(context: Context): AlarmetricsDatabase {
-            return Instance ?: synchronized(this) {
+            return instance ?: synchronized(this) {
                 Room.databaseBuilder(context, AlarmetricsDatabase::class.java, "alarmetrics_database")
-                    .build().also { Instance = it }
+                    .build().also { instance = it }
             }
         }
     }

@@ -9,10 +9,7 @@ import co.adityarajput.alarmetrics.AlarmetricsApplication
 object Provider {
     val Factory = viewModelFactory {
         initializer {
-            AlarmsViewModel(
-                alarmetricsApplication().container.alarmsRepository,
-                alarmetricsApplication().container.recordsRepository,
-            )
+            AlarmsViewModel(alarmetricsApplication().container.repository)
         }
     }
 }

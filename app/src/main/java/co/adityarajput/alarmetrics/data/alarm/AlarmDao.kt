@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface AlarmDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun save(alarm: Alarm): Long
+    suspend fun create(alarm: Alarm): Long
 
     @Query("SELECT * FROM alarms ORDER BY id DESC")
     fun list(): Flow<List<Alarm>>

@@ -7,9 +7,8 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.adityarajput.alarmetrics.data.AlarmWithCount
+import co.adityarajput.alarmetrics.data.Repository
 import co.adityarajput.alarmetrics.data.alarm.Alarm
-import co.adityarajput.alarmetrics.data.alarm.AlarmsRepository
-import co.adityarajput.alarmetrics.data.record.RecordsRepository
 import co.adityarajput.alarmetrics.enums.DialogState
 import co.adityarajput.alarmetrics.enums.Range
 import co.adityarajput.alarmetrics.utils.getEndOfRange
@@ -20,12 +19,9 @@ import kotlinx.coroutines.launch
 data class AlarmsState(val state: List<AlarmWithCount>? = null)
 data class ChartState(val state: List<Int>? = null)
 
-class AlarmsViewModel(
-    private val alarmsRepository: AlarmsRepository,
-    private val recordsRepository: RecordsRepository,
-) : ViewModel() {
+class AlarmsViewModel(private val repository: Repository) : ViewModel() {
     val alarms: StateFlow<AlarmsState> =
-        recordsRepository.aggregate().map { AlarmsState(it) }.stateIn(
+        repository.aggregateRecords().map { AlarmsState(it) }.stateIn(
             viewModelScope,
             SharingStarted.WhileSubscribed(5000),
             AlarmsState(),
@@ -41,7 +37,7 @@ class AlarmsViewModel(
         val to = from.getEndOfRange(range)
 
         viewModelScope.launch {
-            recordsRepository.list(alarm.id, from, to).collect { records ->
+            repository.records(alarm.id, from, to).collect { records ->
                 val counts = MutableList(to.indexIn(range) + 1) { 0 }
                 records.forEach { counts[it.firstSnooze.indexIn(range)] += it.snoozeCount }
                 flow.value = ChartState(counts)
@@ -55,19 +51,18 @@ class AlarmsViewModel(
         viewModelScope.launch {
             if (selectedAlarm!!.isActive) {
                 Log.d("AlarmsViewModel", "Clearing records for $selectedAlarm")
-                recordsRepository.deleteAllRecordsFor(selectedAlarm!!.id)
+                repository.deleteAllRecordsFor(selectedAlarm!!.id)
             }
 
             Log.d("AlarmsViewModel", "Toggling tracking of $selectedAlarm")
-            alarmsRepository.toggleTracking(selectedAlarm!!)
+            repository.toggleTracking(selectedAlarm!!)
         }
     }
 
     fun deleteAlarm() {
         viewModelScope.launch {
             Log.d("AlarmsViewModel", "Deleting $selectedAlarm")
-            alarmsRepository.delete(selectedAlarm!!)
-            recordsRepository.deleteAllRecordsFor(selectedAlarm!!.id)
+            repository.delete(selectedAlarm!!)
         }
     }
 }
