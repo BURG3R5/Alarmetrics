@@ -1,4 +1,4 @@
-package co.adityarajput.alarmetrics.views.screens.alarms
+package co.adityarajput.alarmetrics.views.screens
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -6,12 +6,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -24,13 +22,12 @@ import co.adityarajput.alarmetrics.views.components.AppBar
 import co.adityarajput.alarmetrics.views.components.ArchiveDialog
 import co.adityarajput.alarmetrics.views.components.DeleteDialog
 import co.adityarajput.alarmetrics.views.components.Tile
-import co.adityarajput.alarmetrics.views.icons.Archive
 import co.adityarajput.alarmetrics.views.icons.Delete
+import co.adityarajput.alarmetrics.views.icons.Unarchive
 
 @Composable
-fun AlarmsScreen(
-    goToAboutScreen: () -> Unit,
-    goToArchiveScreen: () -> Unit,
+fun ArchiveScreen(
+    goBack: () -> Unit,
     viewModel: AlarmsViewModel = viewModel(factory = Provider.Factory),
 ) {
     val alarmsState = viewModel.alarms.collectAsState()
@@ -38,30 +35,21 @@ fun AlarmsScreen(
     Scaffold(
         topBar = {
             AppBar(
-                stringResource(R.string.app_name),
-                false,
-                goToAboutScreen,
-                {
-                    IconButton(goToArchiveScreen) {
-                        Icon(
-                            Archive,
-                            stringResource(R.string.archive),
-                            tint = MaterialTheme.colorScheme.onSurface,
-                        )
-                    }
-                },
+                stringResource(R.string.archive),
+                true,
+                goBack,
             )
         },
     ) { paddingValues ->
         if (alarmsState.value.state == null) {
             Box(Modifier.fillMaxSize(), Alignment.Center) { CircularProgressIndicator() }
-        } else if (alarmsState.value.state!!.find { it.alarm.isActive } == null) {
+        } else if (alarmsState.value.state!!.find { !it.alarm.isActive } == null) {
             Box(
                 Modifier.fillMaxSize(),
                 Alignment.Center,
             ) {
                 Text(
-                    stringResource(R.string.no_alarms),
+                    stringResource(R.string.archive_empty),
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.bodyLarge,
                 )
@@ -74,25 +62,22 @@ fun AlarmsScreen(
                 contentPadding = paddingValues,
             ) {
                 items(
-                    alarmsState.value.state!!.filter { it.alarm.isActive },
+                    alarmsState.value.state!!.filter { !it.alarm.isActive },
                     { it.alarm.id },
                 ) {
                     Tile(
                         it.alarm.title,
                         it.alarm.app.displayName.clipTo(30),
-                        pluralStringResource(R.plurals.snooze, it.count, it.count),
-                        {
-                            viewModel.selectedAlarm =
-                                if (it.alarm != viewModel.selectedAlarm) it.alarm else null
-                        },
+                        null,
+                        { viewModel.selectedAlarm = if (it.alarm != viewModel.selectedAlarm) it.alarm else null },
                         viewModel.selectedAlarm == it.alarm,
                         {
                             IconButton({ viewModel.dialogState = DialogState.ARCHIVE }) {
                                 Icon(
-                                    Archive,
+                                    Unarchive,
                                     stringResource(
                                         R.string.alttext_toggle_button,
-                                        stringResource(R.string.archive),
+                                        stringResource(R.string.unarchive),
                                     ),
                                 )
                             }
@@ -103,7 +88,6 @@ fun AlarmsScreen(
                                 ),
                             ) { Icon(Delete, stringResource(R.string.delete)) }
                         },
-                        { Chart(it.alarm) },
                     )
                 }
             }

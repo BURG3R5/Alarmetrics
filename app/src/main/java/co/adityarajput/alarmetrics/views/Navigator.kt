@@ -7,10 +7,10 @@ import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import co.adityarajput.alarmetrics.utils.hasNotificationListenerPermission
-import co.adityarajput.alarmetrics.views.screens.about.AboutScreen
-import co.adityarajput.alarmetrics.views.screens.alarms.AlarmsScreen
-import co.adityarajput.alarmetrics.views.screens.archive.ArchiveScreen
-import co.adityarajput.alarmetrics.views.screens.permissions.PermissionScreen
+import co.adityarajput.alarmetrics.views.screens.AboutScreen
+import co.adityarajput.alarmetrics.views.screens.AlarmsScreen
+import co.adityarajput.alarmetrics.views.screens.ArchiveScreen
+import co.adityarajput.alarmetrics.views.screens.OnboardingScreen
 
 @Composable
 fun Navigator(controller: NavHostController) {
@@ -20,14 +20,14 @@ fun Navigator(controller: NavHostController) {
         controller,
         when {
             hasPermission -> Routes.ALARMS.name
-            else -> Routes.PERMISSION.name
+            else -> Routes.ONBOARDING.name
         },
     ) {
-        composable(Routes.PERMISSION.name) {
-            PermissionScreen {
+        composable(Routes.ONBOARDING.name) {
+            OnboardingScreen {
                 controller.navigate(
                     Routes.ALARMS.name,
-                    NavOptions.Builder().setPopUpTo(Routes.PERMISSION.name, true).build(),
+                    NavOptions.Builder().setPopUpTo(Routes.ONBOARDING.name, true).build(),
                 )
             }
         }
@@ -43,7 +43,7 @@ fun Navigator(controller: NavHostController) {
 }
 
 enum class Routes {
-    PERMISSION,
+    ONBOARDING,
     ALARMS,
     ARCHIVE,
     ABOUT,

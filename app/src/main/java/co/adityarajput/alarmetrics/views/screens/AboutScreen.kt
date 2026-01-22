@@ -1,4 +1,4 @@
-package co.adityarajput.alarmetrics.views.screens.about
+package co.adityarajput.alarmetrics.views.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
