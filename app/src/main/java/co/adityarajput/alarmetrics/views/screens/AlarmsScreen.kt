@@ -11,6 +11,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -20,13 +21,7 @@ import co.adityarajput.alarmetrics.enums.DialogState
 import co.adityarajput.alarmetrics.utils.clipTo
 import co.adityarajput.alarmetrics.viewmodels.AlarmsViewModel
 import co.adityarajput.alarmetrics.viewmodels.Provider
-import co.adityarajput.alarmetrics.views.components.AppBar
-import co.adityarajput.alarmetrics.views.components.ArchiveDialog
-import co.adityarajput.alarmetrics.views.components.Chart
-import co.adityarajput.alarmetrics.views.components.DeleteDialog
-import co.adityarajput.alarmetrics.views.components.Tile
-import co.adityarajput.alarmetrics.views.icons.Archive
-import co.adityarajput.alarmetrics.views.icons.Delete
+import co.adityarajput.alarmetrics.views.components.*
 
 @Composable
 fun AlarmsScreen(
@@ -45,7 +40,7 @@ fun AlarmsScreen(
                 {
                     IconButton(goToArchiveScreen) {
                         Icon(
-                            Archive,
+                            painterResource(R.drawable.archive),
                             stringResource(R.string.archive),
                             tint = MaterialTheme.colorScheme.onSurface,
                         )
@@ -90,7 +85,7 @@ fun AlarmsScreen(
                         {
                             IconButton({ viewModel.dialogState = DialogState.ARCHIVE }) {
                                 Icon(
-                                    Archive,
+                                    painterResource(R.drawable.archive),
                                     stringResource(
                                         R.string.alttext_toggle_button,
                                         stringResource(R.string.archive),
@@ -102,7 +97,12 @@ fun AlarmsScreen(
                                 colors = IconButtonDefaults.iconButtonColors(
                                     contentColor = MaterialTheme.colorScheme.tertiary,
                                 ),
-                            ) { Icon(Delete, stringResource(R.string.delete)) }
+                            ) {
+                                Icon(
+                                    painterResource(R.drawable.delete),
+                                    stringResource(R.string.delete),
+                                )
+                            }
                         },
                         { Chart(it.alarm) },
                     )
