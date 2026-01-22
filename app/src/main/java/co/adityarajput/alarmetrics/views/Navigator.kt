@@ -37,8 +37,8 @@ fun Navigator(controller: NavHostController) {
                 { controller.navigate(Routes.ARCHIVE.name) },
             )
         }
-        composable(Routes.ARCHIVE.name) { ArchiveScreen({ controller.popBackStack() }) }
-        composable(Routes.ABOUT.name) { AboutScreen({ controller.popBackStack() }) }
+        composable(Routes.ARCHIVE.name) { ArchiveScreen(controller::popBackStack) }
+        composable(Routes.ABOUT.name) { AboutScreen(controller::popBackStack) }
     }
 }
 

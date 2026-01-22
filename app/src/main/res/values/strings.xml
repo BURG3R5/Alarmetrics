@@ -10,7 +10,6 @@
     <string name="skip">Skip</string>
 
     <string name="no_alarms">No alarms detected yet.\nCheck again after a few snoozes.</string>
-    <string name="snooze">snooze</string>
     <string name="range">Range:</string>
     <string name="week">Week</string>
     <string name="month">Month</string>
