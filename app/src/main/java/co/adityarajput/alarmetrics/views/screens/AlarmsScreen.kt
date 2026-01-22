@@ -65,9 +65,9 @@ fun AlarmsScreen(
         } else {
             LazyColumn(
                 modifier = Modifier
+                    .padding(paddingValues)
                     .padding(dimensionResource(id = R.dimen.padding_small))
                     .fillMaxSize(),
-                contentPadding = paddingValues,
             ) {
                 items(
                     alarmsState.value.state!!.filter { it.alarm.isActive },
