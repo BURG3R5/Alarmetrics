@@ -24,9 +24,9 @@ fun AppBar(
                 title,
                 style = MaterialTheme.typography.headlineMedium.copy(
                     fontSize = when {
-                        canNavigateBack -> MaterialTheme.typography.headlineSmall.fontSize
+                        canNavigateBack -> MaterialTheme.typography.headlineMedium.fontSize
                         else -> MaterialTheme.typography.headlineLarge.fontSize
-                    }
+                    },
                 ),
             )
         },
@@ -38,12 +38,12 @@ fun AppBar(
                 if (canNavigateBack) {
                     Icon(
                         ArrowBack,
-                        stringResource(R.string.alttext_back_button)
+                        stringResource(R.string.alttext_back_button),
                     )
                 } else {
                     Icon(
                         Snooze,
-                        stringResource(R.string.alttext_app_logo)
+                        stringResource(R.string.alttext_app_logo),
                     )
                 }
             }
