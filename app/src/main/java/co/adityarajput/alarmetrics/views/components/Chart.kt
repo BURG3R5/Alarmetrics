@@ -1,5 +1,6 @@
 package co.adityarajput.alarmetrics.views.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -24,6 +25,7 @@ import co.adityarajput.alarmetrics.viewmodels.AlarmsViewModel
 import co.adityarajput.alarmetrics.viewmodels.Provider
 import com.himanshoe.charty.bar.BarChart
 import com.himanshoe.charty.bar.config.BarChartConfig
+import com.himanshoe.charty.bar.config.BarTooltip
 import com.himanshoe.charty.bar.model.BarData
 import com.himanshoe.charty.common.LabelConfig
 import com.himanshoe.charty.common.asSolidChartColor
@@ -44,27 +46,27 @@ fun Chart(
         )
     }
 
-    val counts = viewModel.getChartData(alarm, range, startDate).collectAsState()
+    val snoozeTimes = viewModel.getChartData(alarm, range, startDate).collectAsState().value.state
 
     Card(
         Modifier
             .fillMaxWidth()
-            .height(300.dp),
+            .height(320.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.outline),
     ) {
+        Spacer(Modifier.height(dimensionResource(R.dimen.padding_medium)))
         Row(
             Modifier.padding(start = dimensionResource(R.dimen.padding_medium)),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(stringResource(R.string.range), color = MaterialTheme.colorScheme.surface)
             Box {
-                TextButton({ rangeDropdownExpanded = true }) {
-                    Text(
-                        stringResource(range.displayName),
-                        color = MaterialTheme.colorScheme.surface,
-                        textDecoration = TextDecoration.Underline,
-                    )
-                }
+                Text(
+                    stringResource(range.displayName),
+                    Modifier.clickable { rangeDropdownExpanded = true },
+                    MaterialTheme.colorScheme.surface,
+                    textDecoration = TextDecoration.Underline,
+                )
                 DropdownMenu(rangeDropdownExpanded, { rangeDropdownExpanded = false }) {
                     Range.entries.forEach {
                         DropdownMenuItem(
@@ -78,19 +80,19 @@ fun Chart(
                 }
             }
         }
+        Spacer(Modifier.height(dimensionResource(R.dimen.padding_medium)))
         Row(
             Modifier.padding(start = dimensionResource(R.dimen.padding_medium)),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(stringResource(R.string.start_date), color = MaterialTheme.colorScheme.surface)
             Box {
-                TextButton({ dateDropdownExpanded = true }) {
-                    Text(
-                        startDate.toDate().toString(),
-                        color = MaterialTheme.colorScheme.surface,
-                        textDecoration = TextDecoration.Underline,
-                    )
-                }
+                Text(
+                    startDate.toDate().toString(),
+                    Modifier.clickable { dateDropdownExpanded = true },
+                    MaterialTheme.colorScheme.surface,
+                    textDecoration = TextDecoration.Underline,
+                )
                 DropdownMenu(
                     dateDropdownExpanded,
                     { dateDropdownExpanded = false },
@@ -126,7 +128,11 @@ fun Chart(
                 }
             }
         }
-        if (counts.value.state == null) {
+        HorizontalDivider(
+            Modifier.padding(dimensionResource(R.dimen.padding_medium)),
+            color = MaterialTheme.colorScheme.surface,
+        )
+        if (snoozeTimes == null) {
             Box(Modifier.fillMaxSize(), Alignment.Center) {
                 CircularProgressIndicator()
             }
@@ -134,32 +140,41 @@ fun Chart(
             val barColor = MaterialTheme.colorScheme.surface.asSolidChartColor()
             val barBackgroundColor = Color.Transparent.asSolidChartColor()
 
-            BarChart(
-                {
-                    counts.value.state!!.map {
-                        BarData(
-                            it.toFloat(),
-                            if (it == 0) " " else it,
-                            barColor,
-                            barBackgroundColor,
-                        )
-                    }
-                },
-                Modifier
-                    .fillMaxWidth()
-                    .padding(dimensionResource(R.dimen.padding_medium)),
-                barChartConfig = BarChartConfig.default().copy(
-                    showGridLines = false,
-                    showCurvedBar = true,
-                    minimumBarCount = counts.value.state!!.size,
-                    cornerRadius = CornerRadius(16f, 16f),
-                ),
-                labelConfig = LabelConfig.default().copy(
-                    showXLabel = true,
-                    xAxisCharCount = 3,
-                    labelTextStyle = MaterialTheme.typography.labelLarge.copy(MaterialTheme.colorScheme.surface),
-                ),
-            )
+            Box(
+                Modifier.fillMaxWidth(),
+                Alignment.TopCenter,
+            ) {
+                Text(
+                    stringResource(R.string.chart_title, stringResource(snoozeTimes.second)),
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.surface,
+                )
+                BarChart(
+                    {
+                        snoozeTimes.first.map {
+                            BarData(
+                                it.toFloat(),
+                                " ",
+                                barColor,
+                                barBackgroundColor,
+                            )
+                        }
+                    },
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(dimensionResource(R.dimen.padding_medium)),
+                    barChartConfig = BarChartConfig.default().copy(
+                        showGridLines = false,
+                        showCurvedBar = true,
+                        minimumBarCount = snoozeTimes.first.size,
+                        cornerRadius = CornerRadius(16f, 16f),
+                    ),
+                    labelConfig = LabelConfig.default().copy(
+                        labelTextStyle = MaterialTheme.typography.labelLarge.copy(MaterialTheme.colorScheme.surface),
+                    ),
+                    barTooltip = BarTooltip.BarTop,
+                )
+            }
         }
     }
 }

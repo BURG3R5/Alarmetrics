@@ -16,11 +16,11 @@ class Repository(private val alarmDao: AlarmDao, private val recordDao: RecordDa
 
     fun records(alarmId: Long, from: Long, to: Long) = recordDao.list(alarmId, from, to)
 
-    fun aggregateRecords() = recordDao.aggregate()
+    fun collectStats() = recordDao.collectStats()
 
     suspend fun toggleTracking(alarm: Alarm) = alarmDao.toggleTracking(alarm.id)
 
-    suspend fun registerSnooze(id: Long) = recordDao.registerSnooze(id)
+    suspend fun updateRecord(id: Long, lastSnooze: Long) = recordDao.update(id, lastSnooze)
 
     suspend fun delete(alarm: Alarm) {
         alarmDao.delete(alarm)
