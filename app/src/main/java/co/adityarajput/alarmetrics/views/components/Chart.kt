@@ -137,6 +137,14 @@ fun Chart(
             Box(Modifier.fillMaxSize(), Alignment.Center) {
                 CircularProgressIndicator()
             }
+        } else if (chartData.snoozeTimes.all { it == 0 }) {
+            Box(Modifier.fillMaxSize(), Alignment.Center) {
+                Text(
+                    stringResource(R.string.no_data),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.surface,
+                )
+            }
         } else {
             val barColor = MaterialTheme.colorScheme.surface.asSolidChartColor()
             val barBackgroundColor = Color.Transparent.asSolidChartColor()
