@@ -28,13 +28,24 @@ android {
             applicationIdSuffix = ".debug"
             resValue("string", "app_name_launcher", "Alarmetrics Debug")
         }
+        create("nightly") {
+            isDebuggable = false
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard/nightly.pro",
+            )
+            applicationIdSuffix = ".nightly"
+            resValue("string", "app_name_launcher", "Alarmetrics Nightly")
+        }
         release {
             isDebuggable = false
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard/release.pro"
             )
         }
     }
