@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Alarmetrics</string>
     <string name="app_name_launcher">Alarmetrics</string>
-    <string name="app_version">1.2.0</string>
+    <string name="app_version">2.0.0</string>
 
     <string name="onboarding_info_1">Alarmetrics runs a low-impact background service that listens to device notifications and tracks how many times you\'ve snoozed alarms, reminders, &amp; calendar events.\n\nNo data is sent off-device; Alarmetrics doesn\'t have access to the internet.</string>
     <string name="grant_permission">Grant permission</string>
@@ -16,6 +16,7 @@
     <string name="year">Year</string>
     <string name="decade">Decade</string>
     <string name="start_date">"Start date: "</string>
+    <string name="no_data">No data for this period.</string>
     <string name="chart_title">Snoozed Time (in %1$s)</string>
     <string name="seconds">seconds</string>
     <string name="minutes">minutes</string>

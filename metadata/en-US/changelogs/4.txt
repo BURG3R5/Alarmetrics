@@ -1,0 +1,7 @@
+• fix: Use drawables instead of ImageVectors
+• feat: Add monochrome layer to launcher icon
+• fix: Use paddingValues correctly
+• feat: Store & display snooze time instead of count
+• feat: Display parent range's average on charts
+
+The database schema has changed significantly in order to provide a better experience. Snooze times will be used as the metric instead of snooze counts. Updating the app will DELETE existing records and stats.
