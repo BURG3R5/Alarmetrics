@@ -2,6 +2,7 @@ package co.adityarajput.alarmetrics.views.screens
 
 import android.annotation.SuppressLint
 import android.content.ClipData
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Build
 import android.os.Handler
@@ -23,12 +24,13 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.content.edit
 import androidx.core.net.toUri
+import co.adityarajput.alarmetrics.Constants.SETTINGS
+import co.adityarajput.alarmetrics.Constants.TRIM_ALARMS
 import co.adityarajput.alarmetrics.R
 import co.adityarajput.alarmetrics.utils.Logger
 import co.adityarajput.alarmetrics.utils.hasUnrestrictedBackgroundUsagePermission
-import co.adityarajput.alarmetrics.views.Theme
 import co.adityarajput.alarmetrics.views.components.AppBar
 import kotlinx.coroutines.launch
 
@@ -39,9 +41,14 @@ fun SettingsScreen(goToAboutScreen: () -> Unit = {}, goBack: () -> Unit = {}) {
     val scope = rememberCoroutineScope()
     val clipboard = LocalClipboard.current
     val handler = remember { Handler(Looper.getMainLooper()) }
+    val sharedPreferences =
+        remember { context.getSharedPreferences(SETTINGS, MODE_PRIVATE) }
 
     var isInvincible by remember {
         mutableStateOf(context.hasUnrestrictedBackgroundUsagePermission())
+    }
+    var isTrimmingAlarms by remember {
+        mutableStateOf(sharedPreferences.getBoolean(TRIM_ALARMS, false))
     }
 
     val watcher = object : Runnable {
@@ -116,6 +123,33 @@ fun SettingsScreen(goToAboutScreen: () -> Unit = {}, goBack: () -> Unit = {}) {
                             },
                         )
                     }
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .padding(
+                                dimensionResource(R.dimen.padding_large),
+                                dimensionResource(R.dimen.padding_medium),
+                            ),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Column(Modifier.weight(1f)) {
+                            Text(
+                                stringResource(R.string.trim_alarms),
+                                style = MaterialTheme.typography.titleSmall,
+                            )
+                            Text(
+                                stringResource(R.string.explain_trimming_alarms),
+                                style = MaterialTheme.typography.bodySmall,
+                            )
+                        }
+                        Switch(
+                            isTrimmingAlarms,
+                            {
+                                isTrimmingAlarms = it
+                                sharedPreferences.edit { putBoolean(TRIM_ALARMS, it) }
+                            },
+                        )
+                    }
                 }
                 Card(
                     Modifier
@@ -183,7 +217,3 @@ fun SettingsScreen(goToAboutScreen: () -> Unit = {}, goBack: () -> Unit = {}) {
         }
     }
 }
-
-@Preview
-@Composable
-fun SettingsScreenPreview() = Theme { SettingsScreen() }

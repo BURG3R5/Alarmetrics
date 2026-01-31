@@ -37,6 +37,8 @@
     <string name="settings_section_1">Optional Enhancements</string>
     <string name="disable_battery_optimization">Disable optimization</string>
     <string name="explain_disabling_battery_optimization">Exempts the app from being restricted by the OS</string>
+    <string name="trim_alarms">Trim alarms</string>
+    <string name="explain_trimming_alarms">Periodically deletes non-archived alarms that haven\'t been seen for a month</string>
     <string name="copy_logs">Copy logs</string>
     <string name="copy_success">Logs copied to clipboard</string>
     <string name="about_app">About Alarmetrics</string>

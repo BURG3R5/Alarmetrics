@@ -1,7 +1,10 @@
 package co.adityarajput.alarmetrics.services
 
+import android.content.pm.ApplicationInfo
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
+import co.adityarajput.alarmetrics.Constants.SETTINGS
+import co.adityarajput.alarmetrics.Constants.TRIM_ALARMS
 import co.adityarajput.alarmetrics.data.AppContainer
 import co.adityarajput.alarmetrics.data.alarm.Alarm
 import co.adityarajput.alarmetrics.data.record.Record
@@ -18,6 +21,7 @@ class NotificationListener : NotificationListenerService() {
     private val serviceJob = SupervisorJob()
     private val serviceScope = CoroutineScope(Dispatchers.Default + serviceJob)
     private val repository by lazy { AppContainer(this).repository }
+    private val sharedPreferences by lazy { getSharedPreferences(SETTINGS, MODE_PRIVATE) }
 
     @Volatile
     private var alarms: List<Alarm> = emptyList()
@@ -66,6 +70,10 @@ class NotificationListener : NotificationListenerService() {
                 record = Record(alarmId)
                 repository.create(record)
                 Logger.i("NotificationListener", "Created $record")
+            }
+
+            if (sharedPreferences.getBoolean(TRIM_ALARMS, false)) {
+                repository.trimAlarms(applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE != 0)
             }
         }
     }
