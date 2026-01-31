@@ -10,12 +10,17 @@
     <string name="skip">Skip</string>
 
     <string name="no_alarms">No alarms detected yet.\nCheck again after a few snoozes.</string>
-    <string name="range">Range:</string>
+    <string name="range">"Range: "</string>
     <string name="week">Week</string>
     <string name="month">Month</string>
     <string name="year">Year</string>
     <string name="decade">Decade</string>
-    <string name="start_date">Start date:</string>
+    <string name="start_date">"Start date: "</string>
+    <string name="chart_title">Snoozed Time (in %1$s)</string>
+    <string name="seconds">seconds</string>
+    <string name="minutes">minutes</string>
+    <string name="hours">hours</string>
+    <string name="days">days</string>
     <string name="dialog_title">%1$s alarm</string>
     <string name="archive_confirmation">Archive alarm? This will clear all existing records for this alarm and disable tracking.</string>
     <string name="unarchive_confirmation">Enable tracking for this alarm?</string>
@@ -37,8 +42,16 @@
     <string name="alttext_back_button">Back button</string>
     <string name="alttext_toggle_button">%1$s alarm</string>
 
-    <plurals name="snooze">
-        <item quantity="one">%1$d snooze</item>
-        <item quantity="other">%1$d snoozes</item>
+    <plurals name="hour">
+        <item quantity="one">%1$d hr</item>
+        <item quantity="other">%1$d hrs</item>
+    </plurals>
+    <plurals name="minute">
+        <item quantity="one">%1$d min</item>
+        <item quantity="other">%1$d mins</item>
+    </plurals>
+    <plurals name="second">
+        <item quantity="one">%1$d sec</item>
+        <item quantity="other">%1$d secs</item>
     </plurals>
 </resources>

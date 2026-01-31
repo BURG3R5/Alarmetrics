@@ -27,14 +27,14 @@ class AppContainer(private val context: Context) {
                         Record(
                             alarmId1,
                             System.currentTimeMillis() - i * 86400000,
-                            Random.nextInt(2, 7),
+                            System.currentTimeMillis() - i * 86400000 + Random.nextInt(2, 7) * 5 * 60 * 1000,
                         ),
                     )
                     repository.create(
                         Record(
                             alarmId2,
                             System.currentTimeMillis() - i * 86400000,
-                            Random.nextInt(2, 15),
+                            System.currentTimeMillis() - i * 86400000 + Random.nextInt(2, 15) * 15 * 60 * 1000,
                         ),
                     )
                 }

@@ -43,20 +43,15 @@ class NotificationListener : NotificationListenerService() {
         val app = AlarmApp.entries.find { sbn.packageName == it.`package` } ?: return
         val title = Regex(app.pattern).find(
             (sbn.notification.extras.getString("android.title") ?: "") +
-                    "\n" + (sbn.notification.extras.getCharSequence("android.text") ?: "")
+                    "\n" + (sbn.notification.extras.getCharSequence("android.text") ?: ""),
         )?.groupValues?.get(1) ?: return
 
         serviceScope.launch {
-            var alarm = alarms.find { it.title == title && it.app == app }
+            var alarm = alarms.find { it.title == title && it.app == app && it.isActive }
             var alarmId: Long
             if (alarm != null) {
                 alarmId = alarm.id
                 Log.d("NotificationListener", "Matched $alarm")
-
-                if (!alarm.isActive) {
-                    Log.d("NotificationListener", "Tracking is disabled")
-                    return@launch
-                }
             } else {
                 alarm = Alarm(title, app)
                 alarmId = repository.create(alarm)
@@ -65,12 +60,32 @@ class NotificationListener : NotificationListenerService() {
 
             var record = repository.getLatestRecord(alarmId)
             if (record != null && record.firstSnooze.happenedToday()) {
-                repository.registerSnooze(record.id)
+                repository.updateRecord(record.id, System.currentTimeMillis())
                 Log.d("NotificationListener", "Updated $record")
             } else {
                 record = Record(alarmId)
                 repository.create(record)
                 Log.d("NotificationListener", "Created $record")
+            }
+        }
+    }
+
+    override fun onNotificationRemoved(sbn: StatusBarNotification) {
+        val app = AlarmApp.entries.find { sbn.packageName == it.`package` } ?: return
+        val title = Regex(app.pattern).find(
+            (sbn.notification.extras.getString("android.title") ?: "") +
+                    "\n" + (sbn.notification.extras.getCharSequence("android.text") ?: ""),
+        )?.groupValues?.get(1) ?: return
+
+        serviceScope.launch {
+            val alarm =
+                alarms.find { it.title == title && it.app == app && it.isActive } ?: return@launch
+            Log.d("NotificationListener", "Matched $alarm")
+
+            val record = repository.getLatestRecord(alarm.id) ?: return@launch
+            if (record.firstSnooze.happenedToday()) {
+                repository.updateRecord(record.id, System.currentTimeMillis())
+                Log.d("NotificationListener", "Updated $record")
             }
         }
     }
