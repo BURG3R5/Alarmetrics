@@ -4,6 +4,8 @@ import co.adityarajput.alarmetrics.data.alarm.Alarm
 import co.adityarajput.alarmetrics.data.alarm.AlarmDao
 import co.adityarajput.alarmetrics.data.record.Record
 import co.adityarajput.alarmetrics.data.record.RecordDao
+import co.adityarajput.alarmetrics.utils.Logger
+import kotlinx.coroutines.flow.first
 
 class Repository(private val alarmDao: AlarmDao, private val recordDao: RecordDao) {
     suspend fun create(alarm: Alarm) = alarmDao.create(alarm)
@@ -28,4 +30,14 @@ class Repository(private val alarmDao: AlarmDao, private val recordDao: RecordDa
     }
 
     suspend fun deleteAllRecordsFor(alarmId: Long) = recordDao.deleteAllRecordsFor(alarmId)
+
+    suspend fun trimAlarms(isDebug: Boolean) {
+        var cutoff = System.currentTimeMillis() - 30 * 24 * 60 * 60 * 1000L
+        if (isDebug) cutoff = System.currentTimeMillis() - 5 * 60 * 1000L
+
+        alarms().first()
+            .filter { it.isActive && (getLatestRecord(it.id)?.lastSnooze ?: 0) < cutoff }
+            .apply { if (isNotEmpty()) Logger.i("Repository", "Trimming alarms: $this") }
+            .forEach { delete(it) }
+    }
 }

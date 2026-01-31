@@ -11,6 +11,7 @@ import co.adityarajput.alarmetrics.views.screens.AboutScreen
 import co.adityarajput.alarmetrics.views.screens.AlarmsScreen
 import co.adityarajput.alarmetrics.views.screens.ArchiveScreen
 import co.adityarajput.alarmetrics.views.screens.OnboardingScreen
+import co.adityarajput.alarmetrics.views.screens.SettingsScreen
 
 @Composable
 fun Navigator(controller: NavHostController) {
@@ -33,11 +34,17 @@ fun Navigator(controller: NavHostController) {
         }
         composable(Routes.ALARMS.name) {
             AlarmsScreen(
-                { controller.navigate(Routes.ABOUT.name) },
                 { controller.navigate(Routes.ARCHIVE.name) },
+                { controller.navigate(Routes.SETTINGS.name) },
             )
         }
         composable(Routes.ARCHIVE.name) { ArchiveScreen(controller::popBackStack) }
+        composable(Routes.SETTINGS.name) {
+            SettingsScreen(
+                { controller.navigate(Routes.ABOUT.name) },
+                controller::popBackStack,
+            )
+        }
         composable(Routes.ABOUT.name) { AboutScreen(controller::popBackStack) }
     }
 }
@@ -46,5 +53,6 @@ enum class Routes {
     ONBOARDING,
     ALARMS,
     ARCHIVE,
+    SETTINGS,
     ABOUT,
 }
