@@ -37,6 +37,8 @@
     <string name="settings_section_1">Optional Enhancements</string>
     <string name="disable_battery_optimization">Disable optimization</string>
     <string name="explain_disabling_battery_optimization">Exempts the app from being restricted by the OS</string>
+    <string name="copy_logs">Copy logs</string>
+    <string name="copy_success">Logs copied to clipboard</string>
     <string name="about_app">About Alarmetrics</string>
 
     <string name="about">About</string>
@@ -48,6 +50,7 @@
     <string name="alttext_app_logo">App logo</string>
     <string name="alttext_back_button">Back button</string>
     <string name="alttext_toggle_button">%1$s alarm</string>
+    <string name="alttext_logs">Logs</string>
     <string name="alttext_info">Info</string>
 
     <plurals name="hour">

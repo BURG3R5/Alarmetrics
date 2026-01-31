@@ -1,6 +1,5 @@
 package co.adityarajput.alarmetrics.viewmodels
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -12,6 +11,7 @@ import co.adityarajput.alarmetrics.data.Repository
 import co.adityarajput.alarmetrics.data.alarm.Alarm
 import co.adityarajput.alarmetrics.enums.DialogState
 import co.adityarajput.alarmetrics.enums.Range
+import co.adityarajput.alarmetrics.utils.Logger
 import co.adityarajput.alarmetrics.utils.getEndOfRange
 import co.adityarajput.alarmetrics.utils.getStartOfRange
 import co.adityarajput.alarmetrics.utils.indexIn
@@ -94,18 +94,18 @@ class AlarmsViewModel(private val repository: Repository) : ViewModel() {
     fun toggleAlarm() {
         viewModelScope.launch {
             if (selectedAlarm!!.isActive) {
-                Log.d("AlarmsViewModel", "Clearing records for $selectedAlarm")
+                Logger.i("AlarmsViewModel", "Clearing records for $selectedAlarm")
                 repository.deleteAllRecordsFor(selectedAlarm!!.id)
             }
 
-            Log.d("AlarmsViewModel", "Toggling tracking of $selectedAlarm")
+            Logger.i("AlarmsViewModel", "Toggling tracking of $selectedAlarm")
             repository.toggleTracking(selectedAlarm!!)
         }
     }
 
     fun deleteAlarm() {
         viewModelScope.launch {
-            Log.d("AlarmsViewModel", "Deleting $selectedAlarm")
+            Logger.i("AlarmsViewModel", "Deleting $selectedAlarm")
             repository.delete(selectedAlarm!!)
         }
     }

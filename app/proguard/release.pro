@@ -4,6 +4,6 @@
     public static int e(...);
 }
 
-#-assumenosideeffects class co.adityarajput.notifilter.utils.Logger {
-#    public final void d(...);
-#}
+-assumenosideeffects class co.adityarajput.alarmetrics.utils.Logger {
+    public final void d(...);
+}

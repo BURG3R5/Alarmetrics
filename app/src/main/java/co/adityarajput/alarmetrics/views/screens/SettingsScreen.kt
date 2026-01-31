@@ -1,10 +1,13 @@
 package co.adityarajput.alarmetrics.views.screens
 
 import android.annotation.SuppressLint
+import android.content.ClipData
 import android.content.Intent
+import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.provider.Settings
+import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -13,7 +16,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.toClipEntry
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -21,14 +26,18 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.net.toUri
 import co.adityarajput.alarmetrics.R
+import co.adityarajput.alarmetrics.utils.Logger
 import co.adityarajput.alarmetrics.utils.hasUnrestrictedBackgroundUsagePermission
 import co.adityarajput.alarmetrics.views.Theme
 import co.adityarajput.alarmetrics.views.components.AppBar
+import kotlinx.coroutines.launch
 
 @SuppressLint("BatteryLife")
 @Composable
 fun SettingsScreen(goToAboutScreen: () -> Unit = {}, goBack: () -> Unit = {}) {
     val context = LocalContext.current
+    val scope = rememberCoroutineScope()
+    val clipboard = LocalClipboard.current
     val handler = remember { Handler(Looper.getMainLooper()) }
 
     var isInvincible by remember {
@@ -113,6 +122,41 @@ fun SettingsScreen(goToAboutScreen: () -> Unit = {}, goBack: () -> Unit = {}) {
                         .fillMaxWidth()
                         .padding(dimensionResource(R.dimen.padding_small)),
                 ) {
+                    val copySuccess = stringResource(R.string.copy_success)
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .padding(
+                                dimensionResource(R.dimen.padding_large),
+                                dimensionResource(R.dimen.padding_medium),
+                                dimensionResource(R.dimen.padding_large),
+                                dimensionResource(R.dimen.padding_small),
+                            )
+                            .clickable {
+                                scope.launch {
+                                    clipboard.setClipEntry(
+                                        ClipData.newPlainText(
+                                            "logs",
+                                            Logger.logs.joinToString("\n"),
+                                        ).toClipEntry(),
+                                    )
+                                    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
+                                        Toast
+                                            .makeText(context, copySuccess, Toast.LENGTH_SHORT)
+                                            .show()
+                                }
+                            },
+                        Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
+                    ) {
+                        Icon(
+                            painterResource(R.drawable.list_alt),
+                            stringResource(R.string.alttext_logs),
+                        )
+                        Text(
+                            stringResource(R.string.copy_logs),
+                            fontWeight = FontWeight.Medium,
+                        )
+                    }
                     Row(
                         Modifier
                             .fillMaxWidth()
