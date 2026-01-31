@@ -8,12 +8,10 @@ enum class Range(val displayName: Int) {
     YEAR(R.string.year),
     DECADE(R.string.decade);
 
-    fun unit(): Range {
-        return when (this) {
-            DECADE -> YEAR
-            YEAR -> MONTH
-            MONTH -> WEEK
-            WEEK -> WEEK
+    val parent: Range
+        get() = when (this) {
+            WEEK -> MONTH
+            MONTH -> YEAR
+            else -> DECADE
         }
-    }
 }

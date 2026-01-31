@@ -28,6 +28,7 @@ import com.himanshoe.charty.bar.config.BarChartConfig
 import com.himanshoe.charty.bar.config.BarTooltip
 import com.himanshoe.charty.bar.model.BarData
 import com.himanshoe.charty.common.LabelConfig
+import com.himanshoe.charty.common.TargetConfig
 import com.himanshoe.charty.common.asSolidChartColor
 
 @Composable
@@ -46,7 +47,7 @@ fun Chart(
         )
     }
 
-    val snoozeTimes = viewModel.getChartData(alarm, range, startDate).collectAsState().value.state
+    val chartData = viewModel.getChartData(alarm, range, startDate).collectAsState().value
 
     Card(
         Modifier
@@ -132,7 +133,7 @@ fun Chart(
             Modifier.padding(dimensionResource(R.dimen.padding_medium)),
             color = MaterialTheme.colorScheme.surface,
         )
-        if (snoozeTimes == null) {
+        if (chartData.snoozeTimes == null || chartData.unit == null) {
             Box(Modifier.fillMaxSize(), Alignment.Center) {
                 CircularProgressIndicator()
             }
@@ -145,13 +146,13 @@ fun Chart(
                 Alignment.TopCenter,
             ) {
                 Text(
-                    stringResource(R.string.chart_title, stringResource(snoozeTimes.second)),
+                    stringResource(R.string.chart_title, stringResource(chartData.unit)),
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.surface,
                 )
                 BarChart(
                     {
-                        snoozeTimes.first.map {
+                        chartData.snoozeTimes.map {
                             BarData(
                                 it.toFloat(),
                                 " ",
@@ -163,16 +164,18 @@ fun Chart(
                     Modifier
                         .fillMaxWidth()
                         .padding(dimensionResource(R.dimen.padding_medium)),
-                    barChartConfig = BarChartConfig.default().copy(
+                    chartData.parentAverage?.toFloat(),
+                    TargetConfig.default().copy(targetLineBarColors = barColor),
+                    BarChartConfig.default().copy(
                         showGridLines = false,
                         showCurvedBar = true,
-                        minimumBarCount = snoozeTimes.first.size,
+                        minimumBarCount = chartData.snoozeTimes.size,
                         cornerRadius = CornerRadius(16f, 16f),
                     ),
-                    labelConfig = LabelConfig.default().copy(
+                    LabelConfig.default().copy(
                         labelTextStyle = MaterialTheme.typography.labelLarge.copy(MaterialTheme.colorScheme.surface),
                     ),
-                    barTooltip = BarTooltip.BarTop,
+                    BarTooltip.BarTop,
                 )
             }
         }
