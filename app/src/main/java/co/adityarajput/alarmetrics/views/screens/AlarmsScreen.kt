@@ -25,28 +25,30 @@ import co.adityarajput.alarmetrics.views.components.*
 
 @Composable
 fun AlarmsScreen(
-    goToAboutScreen: () -> Unit,
     goToArchiveScreen: () -> Unit,
+    goToSettingsScreen: () -> Unit,
     viewModel: AlarmsViewModel = viewModel(factory = Provider.Factory),
 ) {
     val alarmsState = viewModel.alarms.collectAsState()
 
     Scaffold(
         topBar = {
-            AppBar(
-                stringResource(R.string.app_name),
-                false,
-                goToAboutScreen,
-                {
-                    IconButton(goToArchiveScreen) {
-                        Icon(
-                            painterResource(R.drawable.archive),
-                            stringResource(R.string.archive),
-                            tint = MaterialTheme.colorScheme.onSurface,
-                        )
-                    }
-                },
-            )
+            AppBar(stringResource(R.string.app_name), false) {
+                IconButton(goToSettingsScreen) {
+                    Icon(
+                        painterResource(R.drawable.settings),
+                        stringResource(R.string.settings),
+                        tint = MaterialTheme.colorScheme.onSurface,
+                    )
+                }
+                IconButton(goToArchiveScreen) {
+                    Icon(
+                        painterResource(R.drawable.archive),
+                        stringResource(R.string.archive),
+                        tint = MaterialTheme.colorScheme.onSurface,
+                    )
+                }
+            }
         },
     ) { paddingValues ->
         if (alarmsState.value.state == null) {
