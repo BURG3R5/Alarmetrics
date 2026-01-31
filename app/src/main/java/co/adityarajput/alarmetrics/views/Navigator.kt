@@ -7,14 +7,11 @@ import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import co.adityarajput.alarmetrics.utils.hasNotificationListenerPermission
-import co.adityarajput.alarmetrics.views.screens.AboutScreen
-import co.adityarajput.alarmetrics.views.screens.AlarmsScreen
-import co.adityarajput.alarmetrics.views.screens.ArchiveScreen
-import co.adityarajput.alarmetrics.views.screens.OnboardingScreen
-import co.adityarajput.alarmetrics.views.screens.SettingsScreen
+import co.adityarajput.alarmetrics.viewmodels.AppearanceViewModel
+import co.adityarajput.alarmetrics.views.screens.*
 
 @Composable
-fun Navigator(controller: NavHostController) {
+fun Navigator(controller: NavHostController, appearanceViewModel: AppearanceViewModel) {
     val hasPermission = remember { controller.context.hasNotificationListenerPermission() }
 
     NavHost(
@@ -43,6 +40,7 @@ fun Navigator(controller: NavHostController) {
             SettingsScreen(
                 { controller.navigate(Routes.ABOUT.name) },
                 controller::popBackStack,
+                appearanceViewModel,
             )
         }
         composable(Routes.ABOUT.name) { AboutScreen(controller::popBackStack) }
