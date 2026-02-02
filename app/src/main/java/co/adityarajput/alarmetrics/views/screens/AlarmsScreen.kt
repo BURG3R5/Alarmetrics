@@ -19,6 +19,7 @@ import co.adityarajput.alarmetrics.R
 import co.adityarajput.alarmetrics.enums.DialogState
 import co.adityarajput.alarmetrics.utils.clipTo
 import co.adityarajput.alarmetrics.utils.toShortHumanReadableTime
+import co.adityarajput.alarmetrics.utils.withoutDate
 import co.adityarajput.alarmetrics.viewmodels.AlarmsViewModel
 import co.adityarajput.alarmetrics.viewmodels.Provider
 import co.adityarajput.alarmetrics.views.components.*
@@ -72,7 +73,9 @@ fun AlarmsScreen(
                     .fillMaxSize(),
             ) {
                 items(
-                    alarmsState.value.state!!.filter { it.alarm.isActive },
+                    alarmsState.value.state!!
+                        .filter { it.alarm.isActive }
+                        .sortedBy { it.latestFirstSnooze?.withoutDate() ?: Long.MAX_VALUE },
                     { it.alarm.id },
                 ) {
                     Tile(

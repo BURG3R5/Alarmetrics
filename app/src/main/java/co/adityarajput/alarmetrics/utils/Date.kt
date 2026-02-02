@@ -3,6 +3,7 @@ package co.adityarajput.alarmetrics.utils
 import co.adityarajput.alarmetrics.enums.Range
 import java.time.Instant
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.ZoneId
 
 fun Long.indexIn(range: Range): Int {
@@ -58,3 +59,7 @@ fun Long.toDate(): LocalDate = Instant
 
 fun LocalDate.millisAtStartOfDay() =
     this.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
+
+fun Long.withoutDate() = this - this.toDate().millisAtStartOfDay()
+
+fun LocalDateTime.toMillis() = this.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()

@@ -8,6 +8,7 @@ data class AlarmWithStats(
     val alarm: Alarm,
     private val totalSnoozeTime: Long,
     private val recordsCount: Int,
+    val latestFirstSnooze: Long?,
 ) {
     val averageSnoozeTime: Int
         get() = if (recordsCount == 0) 0 else (totalSnoozeTime / recordsCount).toInt()
