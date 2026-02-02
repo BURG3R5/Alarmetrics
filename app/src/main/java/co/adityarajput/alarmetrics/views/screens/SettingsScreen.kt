@@ -26,17 +26,24 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.core.content.edit
 import androidx.core.net.toUri
+import co.adityarajput.alarmetrics.Constants.BRIGHTNESS
 import co.adityarajput.alarmetrics.Constants.SETTINGS
 import co.adityarajput.alarmetrics.Constants.TRIM_ALARMS
 import co.adityarajput.alarmetrics.R
 import co.adityarajput.alarmetrics.utils.Logger
 import co.adityarajput.alarmetrics.utils.hasUnrestrictedBackgroundUsagePermission
+import co.adityarajput.alarmetrics.viewmodels.AppearanceViewModel
+import co.adityarajput.alarmetrics.views.Brightness
 import co.adityarajput.alarmetrics.views.components.AppBar
 import kotlinx.coroutines.launch
 
 @SuppressLint("BatteryLife")
 @Composable
-fun SettingsScreen(goToAboutScreen: () -> Unit = {}, goBack: () -> Unit = {}) {
+fun SettingsScreen(
+    goToAboutScreen: () -> Unit = {},
+    goBack: () -> Unit = {},
+    viewModel: AppearanceViewModel,
+) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     val clipboard = LocalClipboard.current
@@ -149,6 +156,54 @@ fun SettingsScreen(goToAboutScreen: () -> Unit = {}, goBack: () -> Unit = {}) {
                                 sharedPreferences.edit { putBoolean(TRIM_ALARMS, it) }
                             },
                         )
+                    }
+                }
+                Card(
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(dimensionResource(R.dimen.padding_small)),
+                ) {
+                    Text(
+                        stringResource(R.string.settings_section_2),
+                        Modifier.padding(
+                            dimensionResource(R.dimen.padding_large),
+                            dimensionResource(R.dimen.padding_medium),
+                        ),
+                        fontWeight = FontWeight.Medium,
+                    )
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .padding(
+                                start = dimensionResource(R.dimen.padding_large),
+                                end = dimensionResource(R.dimen.padding_large),
+                                bottom = dimensionResource(R.dimen.padding_medium),
+                            ),
+                        Arrangement.SpaceBetween,
+                        Alignment.CenterVertically,
+                    ) {
+                        Text(
+                            stringResource(R.string.app_theme),
+                            style = MaterialTheme.typography.titleSmall,
+                        )
+                        SingleChoiceSegmentedButtonRow {
+                            Brightness.entries.forEachIndexed { i, b ->
+                                SegmentedButton(
+                                    i == viewModel.brightness.ordinal,
+                                    {
+                                        sharedPreferences.edit { putInt(BRIGHTNESS, i) }
+                                        viewModel.brightness = Brightness.entries[i]
+                                    },
+                                    SegmentedButtonDefaults.itemShape(i, 3),
+                                    label = {
+                                        Icon(
+                                            painterResource(b.icon),
+                                            stringResource(b.description),
+                                        )
+                                    },
+                                )
+                            }
+                        }
                     }
                 }
                 Card(

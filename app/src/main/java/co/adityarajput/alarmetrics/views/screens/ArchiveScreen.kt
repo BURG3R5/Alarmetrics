@@ -6,7 +6,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
@@ -61,14 +62,19 @@ fun ArchiveScreen(
                     .fillMaxSize(),
             ) {
                 items(
-                    alarmsState.value.state!!.filter { !it.alarm.isActive },
+                    alarmsState.value.state!!
+                        .filter { !it.alarm.isActive }
+                        .sortedBy { it.alarm.title },
                     { it.alarm.id },
                 ) {
                     Tile(
                         it.alarm.title,
                         it.alarm.app.displayName.clipTo(30),
                         null,
-                        { viewModel.selectedAlarm = if (it.alarm != viewModel.selectedAlarm) it.alarm else null },
+                        {
+                            viewModel.selectedAlarm =
+                                if (it.alarm != viewModel.selectedAlarm) it.alarm else null
+                        },
                         viewModel.selectedAlarm == it.alarm,
                         {
                             IconButton({ viewModel.dialogState = DialogState.ARCHIVE }) {
@@ -85,7 +91,12 @@ fun ArchiveScreen(
                                 colors = IconButtonDefaults.iconButtonColors(
                                     contentColor = MaterialTheme.colorScheme.tertiary,
                                 ),
-                            ) { Icon(painterResource(R.drawable.delete), stringResource(R.string.delete)) }
+                            ) {
+                                Icon(
+                                    painterResource(R.drawable.delete),
+                                    stringResource(R.string.delete),
+                                )
+                            }
                         },
                     )
                 }

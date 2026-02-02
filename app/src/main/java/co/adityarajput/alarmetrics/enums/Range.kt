@@ -6,12 +6,5 @@ enum class Range(val displayName: Int) {
     WEEK(R.string.week),
     MONTH(R.string.month),
     YEAR(R.string.year),
-    DECADE(R.string.decade);
-
-    val parent: Range
-        get() = when (this) {
-            WEEK -> MONTH
-            MONTH -> YEAR
-            else -> DECADE
-        }
+    DECADE(R.string.decade),
 }

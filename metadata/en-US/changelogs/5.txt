@@ -1,0 +1,6 @@
+• feat: Store INFO and ERROR logs
+• feat: Optionally discard alarms that haven't been seen for a month
+• feat: Add light mode
+• feat: Use previous range's average instead of parent's average as target
+
+Users can now copy recent info and error logs from the settings screen, making it easier to diagnose issues.

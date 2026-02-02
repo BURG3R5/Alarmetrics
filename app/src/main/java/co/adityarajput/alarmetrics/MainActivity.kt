@@ -25,11 +25,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavHostController
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
+import co.adityarajput.alarmetrics.viewmodels.AppearanceViewModel
+import co.adityarajput.alarmetrics.viewmodels.Provider
 import co.adityarajput.alarmetrics.views.Navigator
 import co.adityarajput.alarmetrics.views.Theme
 
@@ -38,17 +38,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Theme {
+            val viewModel: AppearanceViewModel = viewModel(factory = Provider.Factory)
+
+            Theme(viewModel.brightness) {
                 Surface(
                     Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background,
-                ) { Alarmetrics() }
+                ) { Navigator(rememberNavController(), viewModel) }
             }
         }
     }
 }
-
-@Preview
-@Composable
-fun Alarmetrics(navController: NavHostController = rememberNavController()) =
-    Navigator(navController)

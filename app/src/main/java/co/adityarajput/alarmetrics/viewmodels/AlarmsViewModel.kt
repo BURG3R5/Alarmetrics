@@ -24,7 +24,7 @@ data class AlarmsState(val state: List<AlarmWithStats>? = null)
 data class ChartState(
     val snoozeTimes: List<Int>? = null,
     val unit: Int? = null,
-    val parentAverage: Int? = null,
+    val previousRangeAverage: Int? = null,
 )
 
 class AlarmsViewModel(private val repository: Repository) : ViewModel() {
@@ -43,23 +43,25 @@ class AlarmsViewModel(private val repository: Repository) : ViewModel() {
         val flow = MutableStateFlow(ChartState())
 
         val to = from.getEndOfRange(range)
-        val parentFrom = from.getStartOfRange(range.parent)
-        val parentTo = from.getEndOfRange(range.parent)
+        val previousTo = from - 1
+        val previousFrom = previousTo.getStartOfRange(range)
 
         viewModelScope.launch {
             repository.records(alarm.id, from, to)
-                .combine(repository.records(alarm.id, parentFrom, parentTo)) { s, t -> s to t }
+                .combine(repository.records(alarm.id, previousFrom, previousTo)) { s, t -> s to t }
                 .collect { value ->
                     val records = value.first
                     val snoozeTimes = MutableList(to.indexIn(range) + 1) { 0L }
                     records.forEach { snoozeTimes[it.firstSnooze.indexIn(range)] += it.snoozeTime }
                     val max = snoozeTimes.max()
 
-                    val parentRecords = value.second
-                    val parentSnoozeTimes = MutableList(parentTo.indexIn(range.parent) + 1) { 0L }
-                    parentRecords.forEach { parentSnoozeTimes[it.firstSnooze.indexIn(range.parent)] += it.snoozeTime }
-                    val average = parentSnoozeTimes.sum() /
-                            max(parentSnoozeTimes.count { it > 0L } * snoozeTimes.size, 1)
+                    val previousRangeRecords = value.second
+                    val previousRangeSnoozeTimes = MutableList(previousTo.indexIn(range) + 1) { 0L }
+                    previousRangeRecords.forEach {
+                        previousRangeSnoozeTimes[it.firstSnooze.indexIn(range)] += it.snoozeTime
+                    }
+                    val average = previousRangeSnoozeTimes.sum() /
+                            max(previousRangeSnoozeTimes.count { it > 0L }, 1)
 
                     var unit = R.string.days
                     var divisor = 86_400_000f
