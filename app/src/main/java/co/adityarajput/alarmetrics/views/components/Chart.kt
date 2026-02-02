@@ -172,7 +172,7 @@ fun Chart(
                     Modifier
                         .fillMaxWidth()
                         .padding(dimensionResource(R.dimen.padding_medium)),
-                    chartData.parentAverage?.toFloat(),
+                    chartData.previousRangeAverage?.toFloat(),
                     TargetConfig.default().copy(targetLineBarColors = barColor),
                     BarChartConfig.default().copy(
                         showGridLines = false,
