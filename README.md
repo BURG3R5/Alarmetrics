@@ -10,7 +10,7 @@ Alarmetrics listens to device notifications and tracks snoozed alarms, reminders
 
 ## Screenshots
 
-<img alt="Alarmetrics screenshot: alarms screen" src="https://github.com/BURG3R5/Alarmetrics/blob/dev/metadata/en-US/images/phoneScreenshots/1.png" width=30%> <img alt="Alarmetrics screenshot: archive screen" src="https://github.com/BURG3R5/Alarmetrics/blob/dev/metadata/en-US/images/phoneScreenshots/2.png" width=30%>
+<img alt="Alarmetrics screenshot: alarms screen" src="https://github.com/BURG3R5/Alarmetrics/blob/dev/metadata/en-US/images/phoneScreenshots/1.png" width=30%> <img alt="Alarmetrics screenshot: archive screen" src="https://github.com/BURG3R5/Alarmetrics/blob/dev/metadata/en-US/images/phoneScreenshots/2.png" width=30%> <img alt="Alarmetrics screenshot: alarms screen in light mode" src="https://github.com/BURG3R5/Alarmetrics/blob/dev/metadata/en-US/images/phoneScreenshots/3.png" width=30%>
 
 ## Features
 
