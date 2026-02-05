@@ -51,11 +51,16 @@ class NotificationListener : NotificationListenerService() {
         )?.groupValues?.get(1) ?: return
 
         serviceScope.launch {
-            var alarm = alarms.find { it.title == title && it.app == app && it.isActive }
+            var alarm = alarms.find { it.title == title && it.app == app }
             var alarmId: Long
             if (alarm != null) {
                 alarmId = alarm.id
                 Logger.i("NotificationListener", "Matched $alarm")
+
+                if (!alarm.isActive) {
+                    Logger.d("NotificationListener", "Tracking is disabled")
+                    return@launch
+                }
             } else {
                 alarm = Alarm(title, app)
                 alarmId = repository.create(alarm)
