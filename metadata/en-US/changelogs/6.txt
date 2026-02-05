@@ -1,0 +1,2 @@
+• fix: Don't duplicate disabled alarms
+• fix: Pad the list of alarms to prevent blocking by FAB
