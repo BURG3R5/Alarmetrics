@@ -44,14 +44,20 @@ class NotificationListener : NotificationListenerService() {
     }
 
     override fun onNotificationPosted(sbn: StatusBarNotification) {
+        val notificationTitle = sbn.notification.extras.getString("android.title") ?: ""
+        val notificationContent = sbn.notification.extras.getCharSequence("android.text") ?: ""
+        Logger.d(
+            "NotificationListener",
+            "Notification received from ${sbn.packageName}: {$notificationTitle, $notificationContent}",
+        )
+
         val app = AlarmApp.entries.find { sbn.packageName == it.`package` } ?: return
-        val title = Regex(app.pattern).find(
-            (sbn.notification.extras.getString("android.title") ?: "") +
-                    "\n" + (sbn.notification.extras.getCharSequence("android.text") ?: ""),
-        )?.groupValues?.get(1) ?: return
+        val alarmTitle =
+            Regex(app.pattern).find("$notificationTitle\n$notificationContent")
+                ?.groupValues?.get(1) ?: return
 
         serviceScope.launch {
-            var alarm = alarms.find { it.title == title && it.app == app }
+            var alarm = alarms.find { it.title == alarmTitle && it.app == app }
             var alarmId: Long
             if (alarm != null) {
                 alarmId = alarm.id
@@ -62,7 +68,7 @@ class NotificationListener : NotificationListenerService() {
                     return@launch
                 }
             } else {
-                alarm = Alarm(title, app)
+                alarm = Alarm(alarmTitle, app)
                 alarmId = repository.create(alarm)
                 Logger.i("NotificationListener", "Created $alarm")
             }
