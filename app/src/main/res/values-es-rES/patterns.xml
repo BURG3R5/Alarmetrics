@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="android_clock">(.*)\\nPospuesta hasta(?:.*)</string>
-    <string name="google_clock">Alarma pospuesta\\n(?:.*) - (.*)</string>
     <string name="google_calendar">(.*) \\(repetición\\)</string>
     <string name="samsung_clock">^(?!\\d+ alarmas)(.*) pospuesta</string>
     <string name="samsung_calendar">(.*) \\(repetición\\)</string>

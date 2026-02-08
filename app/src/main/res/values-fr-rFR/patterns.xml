@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="android_clock">(.*)\\nRépétition jusqu\'à dim. (?:.*)</string>
-    <string name="google_clock">Alarme répétée\\ndim. (?:.*) - (.*)</string>
     <string name="google_calendar">(.*) \\(rappel\\)</string>
     <string name="samsung_clock">^(?!\\d+ alarmes)(.*) répétée</string>
     <string name="samsung_calendar">(.*) \\(rappel\\)</string>

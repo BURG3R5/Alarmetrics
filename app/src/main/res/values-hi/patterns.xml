@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="google_clock">स्नूज़ (थोड़ी देर के लिए चुप) किया गया अलार्म\\n(?:.*) - (.*)</string>
     <string name="android_clock">(.*)\\n(?:.*)दोबारा याद(?:.*)</string>
-    <string name="google_clock">स्नूज़ (?:.*)\\n(?:.*) - (.*)</string>
     <string name="google_calendar">(.*) \\(स्नूज़ हुआ\\)</string>
     <string name="samsung_clock">^(?!\\d+ .+)(.*) स्नूज़ किया गया</string>
     <string name="samsung_calendar">(.*) \\(स्नूज़ हुआ\\)</string>
