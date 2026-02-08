@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(አሸልቧል\\)</string>
     <string name="android_clock">(.*)\\nእስከ (?:.*) ድረስ በማሸለብ ላይ</string>
     <string name="google_clock">ማንቂያ አሸልቧል\\n(?:.*) - (.*)</string>
 </resources>

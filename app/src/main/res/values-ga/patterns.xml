@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(faoi shuan\\)</string>
     <string name="samsung_calendar">(.*) \\(ar néal codlata\\)</string>
     <string name="samsung_clock">(.*) curtha ar néal codlata</string>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(స్నూజ్ చేయబడింది\\)</string>
     <string name="samsung_calendar">(.*) \\(స్నూజ్ చేయబడింది\\)</string>
     <string name="samsung_clock">(.*) స్నూజ్ చేయబడింది</string>
 </resources>

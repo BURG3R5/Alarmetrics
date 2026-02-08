@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(мононда\\)</string>
     <string name="samsung_calendar">(.*) \\(мононда\\)</string>
     <string name="samsung_clock">(.*) ба ғанаб гузошта шуд</string>
 </resources>

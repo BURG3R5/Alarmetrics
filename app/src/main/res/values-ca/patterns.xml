@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(repetit\\)</string>
     <string name="samsung_calendar">(.*) \\(repetit\\)</string>
     <string name="samsung_clock">(.*) repetit</string>
     <string name="android_clock">(.*)\\nEs posposarà fins a les (?:.*)</string>

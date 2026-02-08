@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*)\\(다시 알림 대기 중\\)</string>
     <string name="samsung_calendar">(.*)\\(다시 알림 대기 중\\)</string>
     <string name="samsung_clock">(.*) 다시 울림</string>
     <string name="android_clock">(.*)\\n(?:.*)에 다시 울림</string>

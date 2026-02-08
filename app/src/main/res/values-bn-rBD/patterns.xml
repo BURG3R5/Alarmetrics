@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(স্নুজ হয়েছে\\)</string>
     <string name="samsung_calendar">(.*) \\(স্নুজ হয়েছে\\)</string>
     <string name="samsung_clock">(.*) স্নুজ হয়েছে</string>
 </resources>

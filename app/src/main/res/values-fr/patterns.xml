@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(rappel\\)</string>
     <string name="samsung_calendar">(.*) \\(rappel\\)</string>
     <string name="samsung_clock">(.*) répétée</string>
     <string name="android_clock">(.*)\\nRépétition jusqu\'à (?:.*)</string>

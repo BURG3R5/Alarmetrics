@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(atidėta\\)</string>
     <string name="samsung_calendar">(.*) \\(atidėta\\)</string>
     <string name="samsung_clock">(.*) atidėtas</string>
     <string name="android_clock">(.*)\\nSnaudžiama iki (?:.*)</string>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*)\\(貪睡\\)</string>
     <string name="samsung_calendar">(.*)\\(貪睡\\)</string>
     <string name="samsung_clock">已延遲 (.*)</string>
     <string name="android_clock">(.*)\\n延後到(?:.*)</string>

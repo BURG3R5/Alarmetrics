@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(ലഘുനിദ്രയിലാക്കി\\)</string>
     <string name="samsung_calendar">(.*) \\(ലഘുനിദ്രയിലാക്കി\\)</string>
     <string name="samsung_clock">(.*)-നെ ലഘുനിദ്രയിലാക്കി</string>
 </resources>

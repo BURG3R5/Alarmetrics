@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(drzemka\\)</string>
     <string name="samsung_calendar">(.*) \\(drzemka\\)</string>
     <string name="samsung_clock">(.*) — drzemka</string>
     <string name="android_clock">(.*)\\nDrzemka do (?:.*)</string>

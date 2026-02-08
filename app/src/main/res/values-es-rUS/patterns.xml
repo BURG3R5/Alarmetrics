@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(Aplazada\\)</string>
     <string name="samsung_calendar">(.*) \\(Aplazada\\)</string>
     <string name="samsung_clock">Se aplazó (.*)</string>
     <string name="android_clock">(.*)\\nPosponer hasta: (?:.*)</string>

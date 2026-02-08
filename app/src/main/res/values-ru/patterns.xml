@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(приостановлен\\)</string>
     <string name="samsung_calendar">(.*) \\(приостановлен\\)</string>
     <string name="samsung_clock">(.*) отложен</string>
     <string name="android_clock">(.*)\\nПовтор в (?:.*)</string>

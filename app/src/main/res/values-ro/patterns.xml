@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(Amânată\\)</string>
     <string name="samsung_calendar">(.*) \\(Amânată\\)</string>
     <string name="samsung_clock">(.*) amânată</string>
     <string name="android_clock">(.*)\\nSe amână până (?:.*)</string>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(përsëritur\\)</string>
     <string name="samsung_calendar">(.*) \\(përsëritur\\)</string>
     <string name="samsung_clock">(.*) do të përsëritet</string>
 </resources>

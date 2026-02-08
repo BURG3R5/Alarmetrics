@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(kordus\\)</string>
     <string name="samsung_calendar">(.*) \\(kordus\\)</string>
     <string name="samsung_clock">Märguande (.*) kordus</string>
 </resources>

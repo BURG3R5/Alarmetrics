@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(відкладено\\)</string>
     <string name="samsung_calendar">(.*) \\(відкладено\\)</string>
     <string name="samsung_clock">(.*) відкладено</string>
     <string name="android_clock">(.*)\\nВідкласти сигнал до (?:.*)</string>

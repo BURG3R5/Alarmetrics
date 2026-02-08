@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(We drzimocie\\)</string>
     <string name="samsung_calendar">(.*) \\(We drzimocie\\)</string>
     <string name="samsung_clock">(.*) — drzimoły</string>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(udsat\\)</string>
     <string name="samsung_calendar">(.*) \\(udsat\\)</string>
     <string name="samsung_clock">(.*) udsat</string>
     <string name="android_clock">(.*)\\nSnoozer indtil (?:.*)</string>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*) \\(স্নুজ করা হয়েছে\\)</string>
     <string name="samsung_calendar">(.*) \\(তন্দ্রাচ্ছন্ন\\)</string>
     <string name="samsung_clock">(.*) স্নুজ করা হয়েছে</string>
 </resources>

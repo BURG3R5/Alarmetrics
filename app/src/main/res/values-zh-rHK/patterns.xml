@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*)（已重響）</string>
     <string name="samsung_calendar">(.*)（已重響）</string>
     <string name="samsung_clock">已重響 (.*)</string>
     <string name="android_clock">(.*)\\n延後到(?:.*)</string>

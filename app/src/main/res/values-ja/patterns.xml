@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_reminder">(.*)\\(スヌーズ\\)</string>
     <string name="samsung_calendar">(.*)\\(スヌーズ\\)</string>
     <string name="samsung_clock">(.*)がスヌーズ</string>
     <string name="android_clock">(.*)\\nスヌーズ終了時刻: (?:.*)</string>
