@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock">(.*) naka-snooze</string>
     <string name="android_clock">(.*)\\nNag-i-snooze hanggang (?:.*)</string>
     <string name="google_clock">Na-snooze na alarm\\n(?:.*) - (.*)</string>
 </resources>

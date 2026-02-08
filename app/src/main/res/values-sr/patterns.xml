@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock">Аларм (.*) је одложен</string>
     <string name="android_clock">(.*)\\nОдлагање до (?:.*)</string>
     <string name="google_clock">Одложени аларм\\n(?:.*) - (.*)</string>
 </resources>

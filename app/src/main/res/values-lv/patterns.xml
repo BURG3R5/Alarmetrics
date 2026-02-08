@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock">Modinātājs (.*) ir atlikts</string>
     <string name="android_clock">(.*)\\nAtlikts līdz: (?:.*)</string>
     <string name="google_clock">Atlikts signāls\\n(?:.*) - (.*)</string>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock">Budík (.*) je odložený</string>
     <string name="android_clock">(.*)\\nOdložené do (?:.*)</string>
     <string name="google_clock">Odložený budík\\n(?:.*) - (.*)</string>
 </resources>

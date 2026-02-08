@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock">เลื่อน (.*) แล้ว</string>
     <string name="android_clock">(.*)\\nปิดเสียงเตือนชั่วคราวจนถึง (?:.*)</string>
     <string name="google_clock">เลื่อนการปลุก\\n(?:.*) - (.*)</string>
 </resources>

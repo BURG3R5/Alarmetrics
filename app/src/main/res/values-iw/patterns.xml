@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock">(.*) במצב נודניק</string>
     <string name="android_clock">(.*)\\nמצב נמנום עד (?:.*)</string>
     <string name="google_clock">התראה במצב נודניק\\n(?:.*) - (.*)</string>
 </resources>
