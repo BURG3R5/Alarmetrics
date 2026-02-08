@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="android_clock">(.*)\\nSnoozer indtil (?:.*)</string>
     <string name="google_clock">Alarmen er udsat\\n(?:.*) - (.*)</string>
 </resources>

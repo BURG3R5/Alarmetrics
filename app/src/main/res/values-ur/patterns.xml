@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="android_clock">(.*)\\n(?:.*) تک اسنوز کر رہا ہے</string>
     <string name="google_clock">اسنوز کردہ الارم\\n(?:.*) - (.*)</string>
 </resources>

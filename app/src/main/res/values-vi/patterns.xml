@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="android_clock">(.*)\\nBáo lại cho tới (?:.*)</string>
     <string name="google_clock">Chuông báo đã tạm hoãn\\n(?:.*) - (.*)</string>
 </resources>

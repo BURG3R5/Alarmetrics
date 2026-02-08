@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="android_clock">(.*)\\n(?:.*) чейин тындыруу</string>
     <string name="google_clock">Ойготкуч тындырылды\\n(?:.*) - (.*)</string>
 </resources>

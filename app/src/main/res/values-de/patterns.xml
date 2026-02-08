@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="android_clock">(.*)\\nSchlummern bis (?:.*)</string>
     <string name="google_clock">Weckruf mit Schlummerfunktion\\n(?:.*) - (.*)</string>
 </resources>

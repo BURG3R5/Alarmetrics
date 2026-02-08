@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="android_clock">(.*)\\nMenunda hingga (?:.*)</string>
     <string name="google_clock">Alarm yang ditunda\\n(?:.*) - (.*)</string>
 </resources>

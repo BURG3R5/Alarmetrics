@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="android_clock">(.*)\\n(?:.*) వరకు తాత్కాలికంగా ఆపివేయబడుతోంది</string>
     <string name="google_clock">తాత్కాలికంగా ఆపివేసిన అలారం\\n(?:.*) - (.*)</string>
 </resources>

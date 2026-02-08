@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="android_clock">(.*)\\nSnaudžiama iki (?:.*)</string>
     <string name="google_clock">Nustatytas snausti įspėjimas\\n(?:.*) - (.*)</string>
 </resources>
