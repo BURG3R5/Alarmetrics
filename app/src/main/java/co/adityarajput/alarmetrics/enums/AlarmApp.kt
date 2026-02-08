@@ -1,10 +1,35 @@
 package co.adityarajput.alarmetrics.enums
 
-enum class AlarmApp(val `package`: String, val displayName: String, val pattern: String) {
-    ANDROID_CLOCK("com.android.deskclock", "Android Clock", "(.*)\\nSnoozing until (?:.*)"),
-    GOOGLE_CLOCK("com.google.android.deskclock", "Google Clock", "Snoozed alarm\\n(?:.*) - (.*)"),
-    GOOGLE_CALENDAR("com.google.android.calendar", "Google Calendar", "(.*) \\(snoozed\\)"),
-    SAMSUNG_CLOCK("com.sec.android.app.clockpackage", "Samsung Clock", "^(?!\\d+ alarms)(.*) snoozed"),
-    SAMSUNG_CALENDAR("com.samsung.android.calendar", "Samsung Calendar", "(.*) \\(snoozed\\)"),
-    SAMSUNG_REMINDER("com.samsung.android.app.reminder", "Samsung Reminder", "(.*) \\(snoozed\\)"),
+import co.adityarajput.alarmetrics.R
+
+enum class AlarmApp(val `package`: String, val displayName: String, val pattern: Int) {
+    ANDROID_CLOCK(
+        "com.android.deskclock",
+        "Android Clock",
+        R.string.android_clock,
+    ),
+    GOOGLE_CLOCK(
+        "com.google.android.deskclock",
+        "Google Clock",
+        R.string.google_clock,
+    ),
+    GOOGLE_CALENDAR(
+        "com.google.android.calendar",
+        "Google Calendar", R.string.google_calendar,
+    ),
+    SAMSUNG_CLOCK(
+        "com.sec.android.app.clockpackage",
+        "Samsung Clock",
+        R.string.samsung_clock,
+    ),
+    SAMSUNG_CALENDAR(
+        "com.samsung.android.calendar",
+        "Samsung Calendar",
+        R.string.samsung_calendar,
+    ),
+    SAMSUNG_REMINDER(
+        "com.samsung.android.app.reminder",
+        "Samsung Reminder",
+        R.string.samsung_reminder,
+    ),
 }

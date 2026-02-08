@@ -53,7 +53,8 @@ class NotificationListener : NotificationListenerService() {
 
         val app = AlarmApp.entries.find { sbn.packageName == it.`package` } ?: return
         val alarmTitle =
-            Regex(app.pattern).find("$notificationTitle\n$notificationContent")
+            Regex(getString(app.pattern))
+                .find("$notificationTitle\n$notificationContent")
                 ?.groupValues?.get(1) ?: return
 
         serviceScope.launch {
@@ -91,7 +92,7 @@ class NotificationListener : NotificationListenerService() {
 
     override fun onNotificationRemoved(sbn: StatusBarNotification) {
         val app = AlarmApp.entries.find { sbn.packageName == it.`package` } ?: return
-        val title = Regex(app.pattern).find(
+        val title = Regex(getString(app.pattern)).find(
             (sbn.notification.extras.getString("android.title") ?: "") +
                     "\n" + (sbn.notification.extras.getCharSequence("android.text") ?: ""),
         )?.groupValues?.get(1) ?: return
