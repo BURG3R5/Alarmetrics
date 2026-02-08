@@ -24,10 +24,14 @@ Alarmetrics listens to device notifications and tracks snoozed alarms, reminders
 
 ### Supported apps
 
+- Android Clock
 - Google Calendar
 - Google Clock
 - Samsung Calendar
 - Samsung Clock
 - Samsung Reminder
+
+For exact details, check [the
+`AlarmApp` enum](https://github.com/BURG3R5/Alarmetrics/blob/dev/app/src/main/java/co/adityarajput/alarmetrics/enums/AlarmApp.kt).
 
 If your preferred alarm app isn't on this list, just [create an issue](https://github.com/BURG3R5/Alarmetrics/issues/new).

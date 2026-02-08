@@ -1,6 +1,7 @@
 package co.adityarajput.alarmetrics.enums
 
 enum class AlarmApp(val `package`: String, val displayName: String, val pattern: String) {
+    ANDROID_CLOCK("com.android.deskclock", "Android Clock", "(.*)\\nSnoozing until (?:.*)"),
     GOOGLE_CLOCK("com.google.android.deskclock", "Google Clock", "Snoozed alarm\\n(?:.*) - (.*)"),
     GOOGLE_CALENDAR("com.google.android.calendar", "Google Calendar", "(.*) \\(snoozed\\)"),
     SAMSUNG_CLOCK("com.sec.android.app.clockpackage", "Samsung Clock", "^(?!\\d+ alarms)(.*) snoozed"),
