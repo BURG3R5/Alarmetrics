@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="samsung_reminder">(.*) \\(в дрямка\\)</string>
+    <string name="samsung_calendar">(.*) \\(в дрямка\\)</string>
+    <string name="samsung_clock">(.*) е отложена</string>
+    <string name="android_clock">(.*)\\nОтлагане до (?:.*)</string>
+    <string name="google_clock">Отложен будилник\\n(?:.*) - (.*)</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="android_clock">(.*)\\n(?:.*) पर्यंत स्नूझ करा</string>
+    <string name="google_clock">स्‍नूझ केलेला अलार्म\\n(?:.*) - (.*)</string>
+</resources>

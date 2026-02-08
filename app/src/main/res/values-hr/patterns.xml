@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="samsung_reminder">(.*) \\(odgođeno\\)</string>
+    <string name="samsung_calendar">(.*) \\(odgođeno\\)</string>
+    <string name="samsung_clock">Odgođen alarm (.*)</string>
+    <string name="android_clock">(.*)\\nOdgoda alarma do (?:.*)</string>
+    <string name="google_clock">Odgođeni alarm\\n(?:.*) - (.*)</string>
+</resources>

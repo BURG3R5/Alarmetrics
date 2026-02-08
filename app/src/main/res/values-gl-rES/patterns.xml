@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="samsung_reminder">(.*) \\(repetido\\)</string>
+    <string name="samsung_calendar">(.*) \\(repetido\\)</string>
+    <string name="samsung_clock">(.*) repetido</string>
+</resources>

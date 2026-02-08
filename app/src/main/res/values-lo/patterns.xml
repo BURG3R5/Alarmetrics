@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="android_clock">(.*)\\nປິດສຽງເຕືອນຊົ່ວຄາວຈົນກວ່າຈະຮອດ (?:.*)</string>
+    <string name="google_clock">ເລື່ອນໂມງປຸກແລ້ວ\\n(?:.*) - (.*)</string>
+</resources>

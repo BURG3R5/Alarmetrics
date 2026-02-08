@@ -23,7 +23,7 @@ class AppContainer(private val context: Context) {
             if (repository.alarms().first().isEmpty()) {
                 val alarmId1 = repository.create(Alarm("Wake up", AlarmApp.GOOGLE_CLOCK))
                 val alarmId2 = repository.create(Alarm("Exercise", AlarmApp.SAMSUNG_REMINDER))
-                repository.create(Alarm("Book club", AlarmApp.GOOGLE_CALENDAR))
+                repository.create(Alarm("Book club", AlarmApp.ANDROID_CLOCK))
                 repository.create(Alarm("Sleep", AlarmApp.GOOGLE_CLOCK, false))
                 repository.create(Alarm("Catch up with Neil", AlarmApp.SAMSUNG_CALENDAR, false))
 

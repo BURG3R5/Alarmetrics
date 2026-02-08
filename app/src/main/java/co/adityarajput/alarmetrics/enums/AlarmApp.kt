@@ -13,10 +13,6 @@ enum class AlarmApp(val `package`: String, val displayName: String, val pattern:
         "Google Clock",
         R.string.google_clock,
     ),
-    GOOGLE_CALENDAR(
-        "com.google.android.calendar",
-        "Google Calendar", R.string.google_calendar,
-    ),
     SAMSUNG_CLOCK(
         "com.sec.android.app.clockpackage",
         "Samsung Clock",

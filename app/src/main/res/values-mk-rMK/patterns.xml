@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="samsung_reminder">(.*) \\(паузирано\\)</string>
+    <string name="samsung_calendar">(.*) \\(паузирано\\)</string>
+    <string name="samsung_clock">(.*) е паузирано</string>
+</resources>

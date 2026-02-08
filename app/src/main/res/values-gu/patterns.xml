@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="android_clock">(.*)\\n(?:.*) સુધી સ્નૂઝ કરીને</string>
+    <string name="google_clock">સ્નૂઝ કરેલ એલાર્મ\\n(?:.*) - (.*)</string>
+</resources>

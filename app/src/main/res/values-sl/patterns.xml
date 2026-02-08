@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="samsung_reminder">(.*) \\(Dremež\\)</string>
+    <string name="samsung_calendar">(.*) \\(Dremež\\)</string>
+    <string name="samsung_clock">Alarm (.*) je zamaknjen</string>
+    <string name="android_clock">(.*)\\nDremež do (?:.*)</string>
+    <string name="google_clock">Preložen alarm\\n(?:.*) - (.*)</string>
+</resources>

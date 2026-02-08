@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="samsung_reminder">(.*) \\(បាន​ធ្វើ​ឲ្យ​ស្ងប់\\)</string>
+    <string name="samsung_calendar">(.*) \\(បាន​ធ្វើ​ឲ្យ​ស្ងប់\\)</string>
+    <string name="samsung_clock">បាន​ធ្វើ​ឲ្យ (.*) ស្ងប់</string>
+</resources>

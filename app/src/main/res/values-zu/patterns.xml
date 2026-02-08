@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="samsung_calendar">(.*) \\(ithulisiwe\\)</string>
+    <string name="android_clock">(.*)\\nSnuza kuze kube ngu-(?:.*)</string>
+    <string name="google_clock">I-alamu esnuziwe\\n(?:.*) - (.*)</string>
+</resources>
