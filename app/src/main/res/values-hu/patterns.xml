@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_calendar">(.*) \\(szundi módban\\)</string>
     <string name="samsung_clock">(.*) elhalasztva</string>
     <string name="android_clock">(.*)\\nÉbresztés elhalasztása eddig: (?:.*)</string>
     <string name="google_clock">Elhalasztott ébresztés\\n(?:.*) - (.*)</string>

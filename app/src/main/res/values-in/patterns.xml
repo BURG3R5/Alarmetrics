@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_calendar">(.*) \\(ditunda\\)</string>
     <string name="samsung_clock">(.*) ditunda</string>
     <string name="android_clock">(.*)\\nMenunda hingga (?:.*)</string>
     <string name="google_clock">Alarm yang ditunda\\n(?:.*) - (.*)</string>

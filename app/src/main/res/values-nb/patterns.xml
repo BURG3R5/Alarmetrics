@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_calendar">(.*) \\(slumret\\)</string>
     <string name="samsung_clock">(.*) ble slumret</string>
     <string name="android_clock">(.*)\\nSlumrer til (?:.*)</string>
     <string name="google_clock">Utsatt alarm\\n(?:.*) - (.*)</string>

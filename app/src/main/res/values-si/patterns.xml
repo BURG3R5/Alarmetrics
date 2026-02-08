@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_calendar">(.*) \\(මදක් නිදිගත්\\).</string>
     <string name="samsung_clock">(.*) මදක් නිදිගත්</string>
     <string name="android_clock">(.*)\\n(?:.*) තෙක් යළි සිහි කැඳවන්න</string>
     <string name="google_clock">එලාමය යළි සිහිකැඳවන ලදී\\n(?:.*) - (.*)</string>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_calendar">(.*) \\(adiado\\)</string>
     <string name="samsung_clock">(.*) adiado</string>
     <string name="android_clock">(.*)\\nSuspendido até à(s) (?:.*)</string>
     <string name="google_clock">Alarme suspenso\\n(?:.*) - (.*)</string>

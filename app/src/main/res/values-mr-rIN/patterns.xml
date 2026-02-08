@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_calendar">(.*) \\(स्नूझ\\)</string>
     <string name="samsung_clock">(.*) स्नूझ केले</string>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_calendar">(.*) \\(σε αναβολή\\)</string>
     <string name="samsung_clock">Το (.*) αναβλήθηκε</string>
     <string name="android_clock">(.*)\\nΑναβολή έως τις (?:.*)</string>
     <string name="google_clock">Ξυπνητήρι σε αναβολή\\n(?:.*) - (.*)</string>

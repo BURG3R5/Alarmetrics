@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_calendar">(.*) \\(ସ୍ନୁଜ୍ ହୋଇଛି\\)</string>
     <string name="samsung_clock">(.*) ସ୍ନୁଜ୍ ହୋଇଛି</string>
     <string name="android_clock">(.*)\\n(?:.*) ପର୍ଯ୍ୟନ୍ତ ସ୍ନୁଜ୍ କରିବ</string>
     <string name="google_clock">ସ୍ନୁଜ୍‌ କରାଯାଇଥିବା ଆଲାର୍ମ\\n(?:.*) - (.*)</string>
