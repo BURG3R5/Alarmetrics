@@ -25,7 +25,6 @@ Alarmetrics listens to device notifications and tracks snoozed alarms, reminders
 ### Supported apps
 
 - Android Clock
-- Google Calendar
 - Google Clock
 - Samsung Calendar
 - Samsung Clock

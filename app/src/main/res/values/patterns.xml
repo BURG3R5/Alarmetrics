@@ -2,7 +2,6 @@
 <resources>
     <string name="android_clock">(.*)\\nSnoozing until (?:.*)</string>
     <string name="google_clock">Snoozed alarm\n(?:.*) - (.*)</string>
-    <string name="google_calendar">(.*) \\(snoozed\\)</string>
     <string name="samsung_clock">^(?!\\d+ alarms)(.*) snoozed</string>
     <string name="samsung_calendar">(.*) \\(snoozed\\)</string>
     <string name="samsung_reminder">(.*) \\(snoozed\\)</string>
