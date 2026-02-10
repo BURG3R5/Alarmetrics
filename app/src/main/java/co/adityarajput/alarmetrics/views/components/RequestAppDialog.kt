@@ -106,7 +106,7 @@ fun RequestAppDialog(hideDialog: () -> Unit) {
                         context.startActivity(
                             Intent(
                                 Intent.ACTION_VIEW,
-                                "https://github.com/BURG3R5/Alarmetrics/issues/new?template=app_request".toUri(),
+                                "https://github.com/BURG3R5/Alarmetrics/issues/new?template=app_request.yaml".toUri(),
                             ),
                         )
                     }

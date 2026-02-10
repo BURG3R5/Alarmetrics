@@ -1,0 +1,21 @@
+name: App request
+description: "Request inclusion of a new alarm app"
+
+title: "App request"
+labels: enhancement
+assignees: BURG3R5
+
+body:
+  - type: textarea
+    attributes:
+      label: App details
+      description: "Paste the details copied from the \"Request an app\" dialog."
+      placeholder: "* Package: `com.example.app`\n* Title: \"...\"\n* Content: \"...\""
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: App name
+      description: "Enter a display name for this new app."
+    validations:
+      required: false
