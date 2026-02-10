@@ -4,7 +4,8 @@
 
 **Track your snoozes**
 
-Alarmetrics listens to device notifications and tracks snoozed alarms, reminders, and calendar events.
+Alarmetrics listens to device notifications and tracks snoozed alarms, reminders, and calendar
+events.
 
 [<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80">](https://f-droid.org/packages/co.adityarajput.alarmetrics) [<img src="https://github.com/user-attachments/assets/713d71c5-3dec-4ec4-a3f2-8d28d025a9c6" alt="Get it on Obtainium" height="80">](https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/BURG3R5/Alarmetrics)
 
@@ -22,7 +23,7 @@ Alarmetrics listens to device notifications and tracks snoozed alarms, reminders
     - Fully offline; your data never leaves your device 🔐
 - **Lightweight** - Runs in the background with minimal battery and memory usage ⏩
 
-### Supported apps
+### [Supported apps](https://github.com/BURG3R5/Alarmetrics/blob/dev/app/src/main/java/co/adityarajput/alarmetrics/enums/AlarmApp.kt)
 
 - Android Clock
 - Google Clock
@@ -30,7 +31,4 @@ Alarmetrics listens to device notifications and tracks snoozed alarms, reminders
 - Samsung Clock
 - Samsung Reminder
 
-For exact details, check [the
-`AlarmApp` enum](https://github.com/BURG3R5/Alarmetrics/blob/dev/app/src/main/java/co/adityarajput/alarmetrics/enums/AlarmApp.kt).
-
-If your preferred alarm app isn't on this list, just [create an issue](https://github.com/BURG3R5/Alarmetrics/issues/new).
+If your preferred alarm app isn't on this list, you can raise a request from the app settings.

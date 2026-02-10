@@ -44,8 +44,12 @@
     <string name="light">Light</string>
     <string name="system">System</string>
     <string name="dark">Dark</string>
+    <string name="request_app">Request an app</string>
+    <string name="choose_snooze_notification">Which of the following is a snooze notification from your alarm app?</string>
+    <string name="submit">Submit</string>
+    <string name="details_copy_success">Details copied to clipboard</string>
     <string name="copy_logs">Copy logs</string>
-    <string name="copy_success">Logs copied to clipboard</string>
+    <string name="logs_copy_success">Logs copied to clipboard</string>
     <string name="about_app">About Alarmetrics</string>
 
     <string name="about">About</string>
@@ -57,6 +61,7 @@
     <string name="alttext_app_logo">App logo</string>
     <string name="alttext_back_button">Back button</string>
     <string name="alttext_toggle_button">%1$s alarm</string>
+    <string name="alttext_edit_apps">Edit apps</string>
     <string name="alttext_logs">Logs</string>
     <string name="alttext_info">Info</string>
 
