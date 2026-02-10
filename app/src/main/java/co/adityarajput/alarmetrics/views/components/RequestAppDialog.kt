@@ -52,41 +52,44 @@ fun RequestAppDialog(hideDialog: () -> Unit) {
         hideDialog,
         title = { Text(stringResource(R.string.request_app)) },
         text = {
-            Column {
-                Text(stringResource(R.string.choose_snooze_notification))
-                Column(
-                    Modifier
-                        .heightIn(max = 250.dp)
-                        .padding(dimensionResource(R.dimen.padding_medium))
-                        .selectableGroup()
-                        .verticalScroll(rememberScrollState()),
-                    Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
-                ) {
-                    notifications.forEach {
-                        Row(
-                            Modifier
-                                .fillMaxWidth()
-                                .selectable(it == selectedNotification) {
-                                    selectedNotification = it
-                                },
-                            Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
-                            Alignment.CenterVertically,
-                        ) {
-                            RadioButton(it == selectedNotification, null)
-                            Text(
-                                buildAnnotatedString {
-                                    withStyle(SpanStyle(fontWeight = FontWeight.Medium)) {
-                                        append(it.title)
-                                    }
-                                    append("\n" + it.content)
-                                },
-                                style = MaterialTheme.typography.labelMedium,
-                                fontWeight = FontWeight.Normal,
-                            )
+            if (notifications.isEmpty())
+                Text(stringResource(R.string.no_notifications))
+            else
+                Column {
+                    Text(stringResource(R.string.choose_snooze_notification))
+                    Column(
+                        Modifier
+                            .heightIn(max = 250.dp)
+                            .padding(dimensionResource(R.dimen.padding_medium))
+                            .selectableGroup()
+                            .verticalScroll(rememberScrollState()),
+                        Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
+                    ) {
+                        notifications.forEach {
+                            Row(
+                                Modifier
+                                    .fillMaxWidth()
+                                    .selectable(it == selectedNotification) {
+                                        selectedNotification = it
+                                    },
+                                Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
+                                Alignment.CenterVertically,
+                            ) {
+                                RadioButton(it == selectedNotification, null)
+                                Text(
+                                    buildAnnotatedString {
+                                        withStyle(SpanStyle(fontWeight = FontWeight.Medium)) {
+                                            append(it.title)
+                                        }
+                                        append("\n" + it.content)
+                                    },
+                                    style = MaterialTheme.typography.labelMedium,
+                                    fontWeight = FontWeight.Normal,
+                                )
+                            }
                         }
                     }
                 }
-            }
         },
         confirmButton = {
             TextButton(

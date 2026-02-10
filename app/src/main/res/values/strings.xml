@@ -46,6 +46,7 @@
     <string name="dark">Dark</string>
     <string name="request_app">Request an app</string>
     <string name="choose_snooze_notification">Which of the following is a snooze notification from your alarm app?</string>
+    <string name="no_notifications">No notifications detected currently. Come back when you\'re actively snoozing an alarm.</string>
     <string name="submit">Submit</string>
     <string name="details_copy_success">Details copied to clipboard</string>
     <string name="copy_logs">Copy logs</string>
