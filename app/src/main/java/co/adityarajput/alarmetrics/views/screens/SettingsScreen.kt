@@ -35,6 +35,7 @@ import co.adityarajput.alarmetrics.utils.hasUnrestrictedBackgroundUsagePermissio
 import co.adityarajput.alarmetrics.viewmodels.AppearanceViewModel
 import co.adityarajput.alarmetrics.views.Brightness
 import co.adityarajput.alarmetrics.views.components.AppBar
+import co.adityarajput.alarmetrics.views.components.RequestAppDialog
 import kotlinx.coroutines.launch
 
 @SuppressLint("BatteryLife")
@@ -57,6 +58,7 @@ fun SettingsScreen(
     var isTrimmingAlarms by remember {
         mutableStateOf(sharedPreferences.getBoolean(TRIM_ALARMS, false))
     }
+    var showRequestAppDialog by remember { mutableStateOf(false) }
 
     val watcher = object : Runnable {
         override fun run() {
@@ -184,6 +186,7 @@ fun SettingsScreen(
                     ) {
                         Text(
                             stringResource(R.string.app_theme),
+                            Modifier.padding(end = dimensionResource(R.dimen.padding_small)),
                             style = MaterialTheme.typography.titleSmall,
                         )
                         SingleChoiceSegmentedButtonRow {
@@ -211,16 +214,30 @@ fun SettingsScreen(
                         .fillMaxWidth()
                         .padding(dimensionResource(R.dimen.padding_small)),
                 ) {
-                    val copySuccess = stringResource(R.string.copy_success)
+                    val copySuccess = stringResource(R.string.logs_copy_success)
                     Row(
                         Modifier
                             .fillMaxWidth()
                             .padding(
                                 dimensionResource(R.dimen.padding_large),
                                 dimensionResource(R.dimen.padding_medium),
-                                dimensionResource(R.dimen.padding_large),
-                                dimensionResource(R.dimen.padding_small),
                             )
+                            .clickable { showRequestAppDialog = true },
+                        Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
+                    ) {
+                        Icon(
+                            painterResource(R.drawable.edit_apps),
+                            stringResource(R.string.alttext_edit_apps),
+                        )
+                        Text(
+                            stringResource(R.string.request_app),
+                            fontWeight = FontWeight.Medium,
+                        )
+                    }
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = dimensionResource(R.dimen.padding_large))
                             .clickable {
                                 scope.launch {
                                     clipboard.setClipEntry(
@@ -251,8 +268,6 @@ fun SettingsScreen(
                             .fillMaxWidth()
                             .padding(
                                 dimensionResource(R.dimen.padding_large),
-                                dimensionResource(R.dimen.padding_small),
-                                dimensionResource(R.dimen.padding_large),
                                 dimensionResource(R.dimen.padding_medium),
                             )
                             .clickable { goToAboutScreen() },
@@ -269,6 +284,9 @@ fun SettingsScreen(
                     }
                 }
             }
+
+            if (showRequestAppDialog)
+                RequestAppDialog { showRequestAppDialog = false }
         }
     }
 }

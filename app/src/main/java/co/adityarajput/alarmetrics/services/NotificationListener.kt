@@ -28,6 +28,7 @@ class NotificationListener : NotificationListenerService() {
 
     override fun onCreate() {
         super.onCreate()
+        instance = this
         Logger.i("NotificationListener", "Service created")
 
         serviceScope.launch {
@@ -117,6 +118,12 @@ class NotificationListener : NotificationListenerService() {
 
     override fun onDestroy() {
         super.onDestroy()
+        if (instance == this) instance = null
         serviceJob.cancel()
+    }
+
+    companion object {
+        @Volatile
+        var instance: NotificationListener? = null
     }
 }
