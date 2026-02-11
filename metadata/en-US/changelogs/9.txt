@@ -1,0 +1,2 @@
+• feat: Let user raise requests for new alarm apps
+• patch: Fix Settings UI

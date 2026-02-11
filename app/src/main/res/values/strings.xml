@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="app_name" translatable="false">Alarmetrics</string>
     <string name="app_name_launcher" translatable="false">Alarmetrics</string>
-    <string name="app_version" translatable="false">2.3.0</string>
+    <string name="app_version" translatable="false">2.4.0</string>
 
     <string name="onboarding_info_1">Alarmetrics runs a low-impact background service that listens to device notifications and tracks how many times you\'ve snoozed alarms, reminders, &amp; calendar events.\n\nNo data is sent off-device; Alarmetrics doesn\'t have access to the internet.</string>
     <string name="grant_permission">Grant permission</string>
