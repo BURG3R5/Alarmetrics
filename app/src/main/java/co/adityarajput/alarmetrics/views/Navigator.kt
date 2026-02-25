@@ -38,11 +38,13 @@ fun Navigator(controller: NavHostController, appearanceViewModel: AppearanceView
         composable(Routes.ARCHIVE.name) { ArchiveScreen(controller::popBackStack) }
         composable(Routes.SETTINGS.name) {
             SettingsScreen(
+                { controller.navigate(Routes.LICENSES.name) },
                 { controller.navigate(Routes.ABOUT.name) },
                 controller::popBackStack,
                 appearanceViewModel,
             )
         }
+        composable(Routes.LICENSES.name) { LicensesScreen(controller::popBackStack) }
         composable(Routes.ABOUT.name) { AboutScreen(controller::popBackStack) }
     }
 }
@@ -52,5 +54,6 @@ enum class Routes {
     ALARMS,
     ARCHIVE,
     SETTINGS,
+    LICENSES,
     ABOUT,
 }
