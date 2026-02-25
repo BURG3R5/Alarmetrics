@@ -1,10 +1,11 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
+    alias(libs.plugins.aboutlibraries.android)
     alias(libs.plugins.android.application)
+    alias(libs.plugins.devtools.ksp)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("com.google.devtools.ksp") version "2.3.3"
 }
 
 android {
@@ -84,6 +85,7 @@ dependencies {
     ksp(libs.androidx.room.compiler)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.room.ktx)
+    implementation(libs.aboutlibraries.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

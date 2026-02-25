@@ -137,7 +137,7 @@ fun Chart(
             Box(Modifier.fillMaxSize(), Alignment.Center) {
                 CircularProgressIndicator()
             }
-        } else if (chartData.snoozeTimes.all { it == 0 }) {
+        } else if (chartData.snoozeTimes.all { it == 0F }) {
             Box(Modifier.fillMaxSize(), Alignment.Center) {
                 Text(
                     stringResource(R.string.no_data),
@@ -162,7 +162,7 @@ fun Chart(
                     {
                         chartData.snoozeTimes.map {
                             BarData(
-                                it.toFloat(),
+                                it,
                                 " ",
                                 barColor,
                                 barBackgroundColor,
@@ -172,7 +172,7 @@ fun Chart(
                     Modifier
                         .fillMaxWidth()
                         .padding(dimensionResource(R.dimen.padding_medium)),
-                    chartData.previousRangeAverage?.toFloat(),
+                    chartData.averageSnoozeTime,
                     TargetConfig.default().copy(targetLineBarColors = barColor),
                     BarChartConfig.default().copy(
                         showGridLines = false,

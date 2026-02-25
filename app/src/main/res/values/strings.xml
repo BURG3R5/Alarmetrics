@@ -51,7 +51,12 @@
     <string name="details_copy_success">Details copied to clipboard</string>
     <string name="copy_logs">Copy logs</string>
     <string name="logs_copy_success">Logs copied to clipboard</string>
+    <string name="view_licenses">View licenses</string>
     <string name="about_app">About Alarmetrics</string>
+
+    <!-- region LicensesScreen -->
+    <string name="licenses">Licenses</string>
+    <!-- endregion -->
 
     <string name="about">About</string>
     <string name="app_description">" listens to device notifications and tracks snoozed alarms, reminders, and calendar events."</string>
