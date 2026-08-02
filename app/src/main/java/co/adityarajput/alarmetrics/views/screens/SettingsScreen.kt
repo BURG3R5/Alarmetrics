@@ -27,6 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.core.content.edit
 import androidx.core.net.toUri
 import co.adityarajput.alarmetrics.Constants.BRIGHTNESS
+import co.adityarajput.alarmetrics.Constants.SAVE_NEW_ALARMS
 import co.adityarajput.alarmetrics.Constants.SETTINGS
 import co.adityarajput.alarmetrics.Constants.TRIM_ALARMS
 import co.adityarajput.alarmetrics.R
@@ -58,6 +59,9 @@ fun SettingsScreen(
     }
     var isTrimmingAlarms by remember {
         mutableStateOf(sharedPreferences.getBoolean(TRIM_ALARMS, false))
+    }
+    var isSavingNewAlarms by remember {
+        mutableStateOf(sharedPreferences.getBoolean(SAVE_NEW_ALARMS, true))
     }
     var showRequestAppDialog by remember { mutableStateOf(false) }
 
@@ -92,73 +96,94 @@ fun SettingsScreen(
                         .fillMaxWidth()
                         .padding(dimensionResource(R.dimen.padding_small)),
                 ) {
-                    Text(
-                        stringResource(R.string.settings_section_1),
-                        Modifier.padding(
-                            dimensionResource(R.dimen.padding_large),
-                            dimensionResource(R.dimen.padding_medium),
-                        ),
-                        fontWeight = FontWeight.Medium,
-                    )
-                    Row(
-                        Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = dimensionResource(R.dimen.padding_large)),
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        Column(Modifier.weight(1f)) {
-                            Text(
-                                stringResource(R.string.disable_battery_optimization),
-                                style = MaterialTheme.typography.titleSmall,
-                            )
-                            Text(
-                                stringResource(R.string.explain_disabling_battery_optimization),
-                                style = MaterialTheme.typography.bodySmall,
-                            )
-                        }
-                        Switch(
-                            isInvincible,
-                            {
-                                if (it) {
-                                    val intent = Intent(
-                                        Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS,
-                                        "package:${context.packageName}".toUri(),
-                                    )
-                                    context.startActivity(intent)
-                                } else {
-                                    val intent =
-                                        Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS)
-                                    context.startActivity(intent)
-                                }
-                            },
-                        )
-                    }
-                    Row(
+                    Column(
                         Modifier
                             .fillMaxWidth()
                             .padding(
                                 dimensionResource(R.dimen.padding_large),
                                 dimensionResource(R.dimen.padding_medium),
                             ),
-                        verticalAlignment = Alignment.CenterVertically,
+                        Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
                     ) {
-                        Column(Modifier.weight(1f)) {
-                            Text(
-                                stringResource(R.string.trim_alarms),
-                                style = MaterialTheme.typography.titleSmall,
-                            )
-                            Text(
-                                stringResource(R.string.explain_trimming_alarms),
-                                style = MaterialTheme.typography.bodySmall,
+                        Text(
+                            stringResource(R.string.settings_section_1),
+                            fontWeight = FontWeight.Medium,
+                        )
+                        Row(
+                            Modifier.fillMaxWidth(),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            Column(Modifier.weight(1f)) {
+                                Text(
+                                    stringResource(R.string.disable_battery_optimization),
+                                    style = MaterialTheme.typography.titleSmall,
+                                )
+                                Text(
+                                    stringResource(R.string.explain_disabling_battery_optimization),
+                                    style = MaterialTheme.typography.bodySmall,
+                                )
+                            }
+                            Switch(
+                                isInvincible,
+                                {
+                                    if (it) {
+                                        val intent = Intent(
+                                            Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS,
+                                            "package:${context.packageName}".toUri(),
+                                        )
+                                        context.startActivity(intent)
+                                    } else {
+                                        val intent =
+                                            Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS)
+                                        context.startActivity(intent)
+                                    }
+                                },
                             )
                         }
-                        Switch(
-                            isTrimmingAlarms,
-                            {
-                                isTrimmingAlarms = it
-                                sharedPreferences.edit { putBoolean(TRIM_ALARMS, it) }
-                            },
-                        )
+                        Row(
+                            Modifier.fillMaxWidth(),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            Column(Modifier.weight(1f)) {
+                                Text(
+                                    stringResource(R.string.trim_alarms),
+                                    style = MaterialTheme.typography.titleSmall,
+                                )
+                                Text(
+                                    stringResource(R.string.explain_trimming_alarms),
+                                    style = MaterialTheme.typography.bodySmall,
+                                )
+                            }
+                            Switch(
+                                isTrimmingAlarms,
+                                {
+                                    isTrimmingAlarms = it
+                                    sharedPreferences.edit { putBoolean(TRIM_ALARMS, it) }
+                                },
+                            )
+                        }
+                        Row(
+                            Modifier.fillMaxWidth(),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            Column(Modifier.weight(1f)) {
+                                Text(
+                                    stringResource(R.string.save_new_alarms),
+                                    style = MaterialTheme.typography.titleSmall,
+                                )
+                                Text(
+                                    stringResource(R.string.explain_saving_new_alarms),
+                                    style = MaterialTheme.typography.bodySmall,
+                                )
+                            }
+                            Switch(
+                                isSavingNewAlarms,
+                                {
+                                    isSavingNewAlarms = it
+                                    sharedPreferences.edit { putBoolean(SAVE_NEW_ALARMS, it) }
+                                },
+                            )
+                        }
                     }
                 }
                 Card(
