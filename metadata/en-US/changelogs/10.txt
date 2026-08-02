@@ -1,0 +1,4 @@
+• feat: Use global average instead of previous range's average as target
+• feat: Add setting to disable saving new alarms
+
+Now users can turn off detection of new alarms, once their core alarms have been detected. This will prevent one-time alarms from cluttering the UI.
