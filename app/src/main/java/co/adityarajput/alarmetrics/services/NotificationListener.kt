@@ -3,6 +3,7 @@ package co.adityarajput.alarmetrics.services
 import android.content.pm.ApplicationInfo
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
+import co.adityarajput.alarmetrics.Constants.SAVE_NEW_ALARMS
 import co.adityarajput.alarmetrics.Constants.SETTINGS
 import co.adityarajput.alarmetrics.Constants.TRIM_ALARMS
 import co.adityarajput.alarmetrics.data.AppContainer
@@ -70,6 +71,11 @@ class NotificationListener : NotificationListenerService() {
                     return@launch
                 }
             } else {
+                if (!sharedPreferences.getBoolean(SAVE_NEW_ALARMS, true)) {
+                    Logger.i("NotificationListener", "New alarm $alarmTitle detected but ignored")
+                    return@launch
+                }
+
                 alarm = Alarm(alarmTitle, app)
                 alarmId = repository.create(alarm)
                 Logger.i("NotificationListener", "Created $alarm")

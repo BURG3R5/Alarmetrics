@@ -39,6 +39,8 @@
     <string name="explain_disabling_battery_optimization">Exempts the app from being restricted by the OS</string>
     <string name="trim_alarms">Trim alarms</string>
     <string name="explain_trimming_alarms">Periodically deletes non-archived alarms that haven\'t been seen for a month</string>
+    <string name="save_new_alarms">Save new alarms</string>
+    <string name="explain_saving_new_alarms">If turned off, only the alarms currently displayed on the home screen will be tracked. Newly detected alarms will be ignored.</string>
     <string name="settings_section_2">App Appearance</string>
     <string name="app_theme">App Theme</string>
     <string name="light">Light</string>
