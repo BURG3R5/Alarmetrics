@@ -49,8 +49,11 @@ class AlarmsViewModel(private val repository: Repository) : ViewModel() {
                 records.forEach { snoozeTimes[it.firstSnooze.indexIn(range)] += it.snoozeTime }
 
                 val max = snoozeTimes.max()
-                val average =
+                val average = try {
                     value.second.state!!.first { it.alarm == alarm }.averageSnoozeTime * range.numberOfDaysInChild
+                } catch (_: NoSuchElementException) {
+                    0f
+                }
 
                 var unit = R.string.days
                 var divisor = 86_400_000f
