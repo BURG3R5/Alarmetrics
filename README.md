@@ -32,3 +32,10 @@ events.
 - Samsung Reminder
 
 If your preferred alarm app isn't on this list, you can raise a request from the app settings.
+
+## Verification
+
+Package ID: `co.adityarajput.alarmetrics`
+
+SHA256 hash of signing certificate:
+`56:0A:30:9B:4F:01:AC:3D:28:65:EA:C6:E3:C3:35:59:EC:C7:E9:AD:8E:A7:9E:CD:58:D2:56:B4:B6:45:8A:0E`
