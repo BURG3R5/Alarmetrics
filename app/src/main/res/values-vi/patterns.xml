@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nChuông báo được đặt sau (?:.*). Chọn để hủy.</string>
     <string name="samsung_reminder">(.*) \\(đã tạm dừng\\)</string>
     <string name="samsung_calendar">(.*) \\(đã tạm dừng\\)</string>
     <string name="samsung_clock">(.*) đã tạm dừng</string>

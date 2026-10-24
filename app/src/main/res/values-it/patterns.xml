@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nSveglia impostata alle (?:.*). Selezionare per annullare.</string>
     <string name="samsung_reminder">(.*) \\(rinvio attivato\\)</string>
     <string name="samsung_calendar">(.*) \\(rinvio attivato\\)</string>
     <string name="samsung_clock">(.*) rinviata</string>

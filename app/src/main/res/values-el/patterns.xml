@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nΤο ξυπνητήρι έχει ρυθμιστεί για τις (?:.*). Επιλέξτε για ακύρωση.</string>
     <string name="samsung_reminder">(.*) \\(σε αναβολή\\)</string>
     <string name="samsung_calendar">(.*) \\(σε αναβολή\\)</string>
     <string name="samsung_clock">Το (.*) αναβλήθηκε</string>

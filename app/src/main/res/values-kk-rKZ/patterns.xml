@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nОятар (?:.*) орнатылды. Бас тарту үшін таңдаңыз.</string>
     <string name="samsung_reminder">(.*) \\(қалғу режимінде\\)</string>
     <string name="samsung_calendar">(.*) \\(қалғу режимінде\\)</string>
     <string name="samsung_clock">(.*) қалғу режимінде</string>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nAlarma a fost setată pentru (?:.*). Selectați pentru a anula.</string>
     <string name="samsung_reminder">(.*) \\(Amânată\\)</string>
     <string name="samsung_calendar">(.*) \\(Amânată\\)</string>
     <string name="samsung_clock">(.*) amânată</string>

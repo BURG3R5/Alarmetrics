@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nBudík nastavený na (?:.*). Vybratím ho zrušíte.</string>
     <string name="samsung_reminder">(.*) \\(odložený\\)</string>
     <string name="samsung_calendar">(.*) \\(odložený\\)</string>
     <string name="samsung_clock">Budík (.*) je odložený</string>

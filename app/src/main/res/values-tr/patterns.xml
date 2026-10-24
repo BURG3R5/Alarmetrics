@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nAlam (?:.*) için ayarlandı. İptal etmek için seçin.</string>
     <string name="samsung_reminder">(.*) \\(duraklatıldı\\)</string>
     <string name="samsung_calendar">(.*) \\(duraklatıldı\\)</string>
     <string name="samsung_clock">(.*) duraklatıldı</string>

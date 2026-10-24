@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nການເຕືອນຕັ້ງຄ່າສໍາລັບ (?:.*). ເລືອກເພື່ອຍົກເລີກ.</string>
     <string name="samsung_reminder">(.*) \\(ໄດ້ຢຸດພັກ\\)</string>
     <string name="samsung_calendar">(.*) \\(ໄດ້ຢຸດພັກ\\)</string>
     <string name="samsung_clock">(.*) ເລື່ອນແຈ້ງເຕືອນແລ້ວ</string>

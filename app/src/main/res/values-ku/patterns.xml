@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nوریاکەرەوە دانراوە بۆ (?:.*). دەسنیشانی بکە بۆ هەڵوەشاندنەوە.</string>
     <string name="samsung_reminder">(.*) \\(دواخرا\\)</string>
 </resources>

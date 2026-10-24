@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nAlarm postavljen na (?:.*). Odaberite za prekid.</string>
     <string name="samsung_reminder">(.*) \\(odgođeno\\)</string>
     <string name="samsung_calendar">(.*) \\(odgođeno\\)</string>
     <string name="samsung_clock">Odgođen alarm (.*)</string>

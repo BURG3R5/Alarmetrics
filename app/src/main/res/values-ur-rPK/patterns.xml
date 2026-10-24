@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nالارم (?:.*) کے لئے سیٹ ہے۔ منسوخ کرنے کے لئے منتخب کریں۔</string>
     <string name="samsung_reminder">(.*) \\(اسنوز کردیا گیا\\)</string>
     <string name="samsung_calendar">(.*) \\(اسنوز کردیا گیا\\)</string>
     <string name="samsung_clock">(.*) اسنوز کردیا گیا</string>

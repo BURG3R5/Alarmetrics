@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nItinakda ang alarm para sa (?:.*). Piliin upang kanselahin.</string>
     <string name="samsung_reminder">(.*) \\(nag-snooze\\)</string>
     <string name="samsung_calendar">(.*) \\(nag-snooze\\)</string>
     <string name="samsung_clock">(.*) naka-snooze</string>

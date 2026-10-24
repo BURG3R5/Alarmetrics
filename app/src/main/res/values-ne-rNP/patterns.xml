@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\n(?:.*) का लागि आलार्म सेट गरिएको छ। रद्द गर्न चयन गर्नुहोस्।</string>
     <string name="samsung_reminder">(.*) \\(स्नूज गरिएको छ\\)</string>
     <string name="samsung_calendar">(.*) \\(स्नूज गरिएको छ\\)</string>
     <string name="samsung_clock">(.*) स्नूज गरिएको छ</string>
