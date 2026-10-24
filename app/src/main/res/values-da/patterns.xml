@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nAlarm indstillet for (?:.*). Vælg for at annullere.</string>
     <string name="samsung_reminder">(.*) \\(udsat\\)</string>
     <string name="samsung_calendar">(.*) \\(udsat\\)</string>
     <string name="samsung_clock">(.*) udsat</string>

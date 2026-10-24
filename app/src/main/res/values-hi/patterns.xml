@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nअलार्म (?:.*) का सेट किया गया। रद्द करने के लिए चुनें।</string>
     <string name="android_clock">(.*)\\n(?:.*) के बाद दोबारा याद दिलाया जाएगा</string>
     <string name="google_clock">स्नूज़ (थोड़ी देर के लिए चुप) किया गया अलार्म\\n(?:.*) - (.*)</string>
     <string name="samsung_clock">(.*) स्नूज किया गया</string>

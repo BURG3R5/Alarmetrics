@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nAlarma definida para (?:.*). Selecciona para cancelar.</string>
     <string name="samsung_clock">(.*) pospuesta</string>
     <string name="samsung_calendar">(.*) \\(repetición\\)</string>
     <string name="samsung_reminder">(.*) \\(repetición\\)</string>

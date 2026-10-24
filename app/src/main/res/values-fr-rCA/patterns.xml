@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nAlarme prévue à (?:.*). Sélectionner pour annuler.</string>
     <string name="android_clock">(.*)\\nRépéter à (?:.*)</string>
     <string name="google_clock">Alarme suspendue\\n(?:.*) - (.*)</string>
 </resources>

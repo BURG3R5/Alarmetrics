@@ -1,0 +1,3 @@
+fix: Update Samsung Clock's pattern
+
+With the latest One UI update, Samsung's Clock app's snoozed notifications have changed. Alarmetrics will do its best to continue to track snoozes for alarms set in Samsung Clock, but the metrics will be slightly inaccurate (off by up to 5 minutes) due to technical limitations.

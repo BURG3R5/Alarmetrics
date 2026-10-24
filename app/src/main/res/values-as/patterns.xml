@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\n(?:.*)-ৰ বাবে এলার্ম ছেট কৰক৷ বাতিল কৰিবলৈ চয়ন কৰক৷</string>
     <string name="samsung_reminder">(.*) \\(স্নুজ কৰা হ\'ল\\)</string>
     <string name="samsung_calendar">(.*) \\(স্নুজ কৰা হ\'ল\\)</string>
     <string name="samsung_clock">(.*) স্নুজ হৈছে</string>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nСигнал (?:.*) үчүн коюлган. Токтотууга тандаңыз.</string>
     <string name="samsung_reminder">(.*) \\(жылдырылды\\)</string>
     <string name="samsung_calendar">(.*) \\(жылдырылды\\)</string>
     <string name="samsung_clock">(.*) тындырылды</string>

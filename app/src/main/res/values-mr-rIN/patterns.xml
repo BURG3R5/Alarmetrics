@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samsung_clock_v2">(.*)\\nअलार्म (?:.*)-साठी सेट केला. रद्द करण्यासाठी निवडा.</string>
     <string name="samsung_reminder">(.*) \\(स्नूझ\\)</string>
     <string name="samsung_calendar">(.*) \\(स्नूझ\\)</string>
     <string name="samsung_clock">(.*) स्नूझ केले</string>
