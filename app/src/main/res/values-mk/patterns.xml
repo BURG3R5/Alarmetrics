@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="blackyhawky_clock">(.*)\\nОдложи до (?:.*)</string>
     <string name="android_clock">(.*)\\nОдложи до (?:.*)</string>
     <string name="google_clock">Одложен аларм\\n(?:.*) - (.*)</string>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="blackyhawky_clock">(.*)\\nផ្អាក​រហូតដល់ (?:.*)</string>
     <string name="android_clock">(.*)\\nផ្អាក​រហូតដល់ (?:.*)</string>
     <string name="google_clock">ម៉ោងរោទ៍​ត្រូវ​បានផ្អាក\\n(?:.*) - (.*)</string>
 </resources>

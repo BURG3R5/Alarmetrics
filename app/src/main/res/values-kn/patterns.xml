@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="blackyhawky_clock">(.*)\\n(?:.*) ವರೆಗೆ ಸ್ನೂಜಿಂಗ್ ಆಗುತ್ತದೆ</string>
     <string name="android_clock">(.*)\\n(?:.*) ವರೆಗೆ ಸ್ನೂಜಿಂಗ್ ಆಗುತ್ತದೆ</string>
     <string name="google_clock">ಸ್ನೂಜ್ ಮಾಡಿದ ಅಲಾರಮ್\\n(?:.*) - (.*)</string>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="blackyhawky_clock">(.*)\\nปิดเสียงเตือนชั่วคราวจนถึง (?:.*)</string>
     <string name="samsung_clock_v2">(.*)\\nการ​เตือน​ที่​ตั้ง​สำหรับ (?:.*) ​เลือก​เพื่อ​ยก​เลิก</string>
     <string name="samsung_reminder">(.*) \\(ข้าม\\)</string>
     <string name="samsung_calendar">(.*) \\(ข้าม\\)</string>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="blackyhawky_clock">(.*)\\n(?:.*) хүртэл хойшлуулах</string>
     <string name="android_clock">(.*)\\n(?:.*) хүртэл хойшлуулах</string>
     <string name="google_clock">Хойшлуулсан сэрүүлэг\\n(?:.*) - (.*)</string>
 </resources>

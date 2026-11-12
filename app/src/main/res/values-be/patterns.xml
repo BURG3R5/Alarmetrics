@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="blackyhawky_clock">(.*)\\nПеранос да (?:.*)</string>
     <string name="android_clock">(.*)\\nПеранос да (?:.*)</string>
     <string name="google_clock">Адкладзены будзільнік\\n(?:.*) - (.*)</string>
 </resources>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="blackyhawky_clock">(.*)\\nEm soneca até (?:.*)</string>
     <string name="android_clock">(.*)\\nEm soneca até (?:.*)</string>
 </resources>

@@ -28,6 +28,11 @@ enum class AlarmApp(val `package`: String, val displayName: String, val patterns
         "com.samsung.android.app.reminder",
         "Samsung Reminder",
         listOf(R.string.samsung_reminder),
+    ),
+    BLACKYHAWKY_CLOCK(
+        "com.best.deskclock",
+        "BlackyHawky Clock",
+        listOf(R.string.blackyhawky_clock),
     );
 
     fun extractAlarmTitle(

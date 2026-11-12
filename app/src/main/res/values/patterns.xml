@@ -6,4 +6,5 @@
     <string name="samsung_clock_v2">(.*)\\nAlarm set for (?:.*). Select to cancel.</string>
     <string name="samsung_calendar">(.*) \\(snoozed\\)</string>
     <string name="samsung_reminder">(.*) \\(snoozed\\)</string>
+    <string name="blackyhawky_clock">(.*)\\nSnoozing until (?:.*)</string>
 </resources>

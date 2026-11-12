@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="blackyhawky_clock">(.*)\\n(?:.*) வரை உறக்கநிலையில் வை</string>
     <string name="android_clock">(.*)\\n(?:.*) வரை உறக்கநிலையில் வை</string>
     <string name="google_clock">அலாரம் ஒத்திவைக்கப்பட்டது\\n(?:.*) - (.*)</string>
 </resources>
