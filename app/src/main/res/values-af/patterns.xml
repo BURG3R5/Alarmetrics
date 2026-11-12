@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="blackyhawky_clock">(.*)\\nSluimer tot (?:.*)</string>
     <string name="android_clock">(.*)\\nSluimer tot (?:.*)</string>
     <string name="google_clock">Gesluimerde wekker\\n(?:.*) - (.*)</string>
 </resources>

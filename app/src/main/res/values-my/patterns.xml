@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="blackyhawky_clock">(.*)\\n(?:.*)အထိ မှေးရန်</string>
     <string name="android_clock">(.*)\\n(?:.*)အထိ မှေးရန်</string>
     <string name="google_clock">ဆိုင်းထားသည့် နှိုးစက်\\n(?:.*) - (.*)</string>
 </resources>

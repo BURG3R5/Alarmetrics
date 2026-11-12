@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="blackyhawky_clock">(.*)\\nAtlikts līdz: (?:.*)</string>
     <string name="samsung_clock_v2">(.*)\\nModinātājs ir iestatīts uz (?:.*). Izvēlieties, lai atceltu.</string>
     <string name="samsung_reminder">(.*) \\(snaudas režīmā\\)</string>
     <string name="samsung_calendar">(.*) \\(snaudas režīmā\\)</string>

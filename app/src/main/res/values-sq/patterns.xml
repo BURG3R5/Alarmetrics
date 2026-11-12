@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="blackyhawky_clock">(.*)\\nDremit deri në (?:.*)</string>
     <string name="android_clock">(.*)\\nDremit deri në (?:.*)</string>
     <string name="google_clock">Alarm i shtyrë\\n(?:.*) - (.*)</string>
 </resources>

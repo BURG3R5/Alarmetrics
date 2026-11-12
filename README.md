@@ -30,6 +30,7 @@ events.
 - Samsung Calendar
 - Samsung Clock
 - Samsung Reminder
+- BlackyHawky's Clock<sup>[[repo ↗]](https://github.com/BlackyHawky/Clock)</sup>
 
 If your preferred alarm app isn't on this list, you can raise a request from the app settings.
 

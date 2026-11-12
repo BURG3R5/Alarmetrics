@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="blackyhawky_clock">(.*)\\nSluimeren tot (?:.*)</string>
     <string name="samsung_clock_v2">(.*)\\nAlarm ingesteld voor (?:.*). Selecteer om te annuleren.</string>
     <string name="samsung_reminder">(.*) \\(sluimerend\\)</string>
     <string name="samsung_calendar">(.*) \\(sluimerend\\)</string>

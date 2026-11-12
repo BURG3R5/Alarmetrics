@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="blackyhawky_clock">(.*)\\nՀետաձգվում է մինչև (?:.*)</string>
     <string name="android_clock">(.*)\\nՀետաձգվում է մինչև (?:.*)</string>
     <string name="google_clock">Զարթուցիչը հետաձգվել է\\n(?:.*) - (.*)</string>
 </resources>

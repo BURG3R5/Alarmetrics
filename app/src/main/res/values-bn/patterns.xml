@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="blackyhawky_clock">(.*)\\n(?:.*) পর্যন্ত মনে করানো হবে</string>
     <string name="android_clock">(.*)\\n(?:.*) পর্যন্ত মনে করানো হবে</string>
     <string name="google_clock">স্নুজ করা অ্যালার্ম\\n(?:.*) - (.*)</string>
 </resources>
